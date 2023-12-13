@@ -1,0 +1,27 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    border: 1px solid rgba(221, 221, 221, 1);
+    
+    height: 128px;
+    padding: 0 40px;
+    
+    font-weight: 500;
+    font-size: 20px;
+}
+
+ul {
+    display: flex;
+    gap: 32px;
+}
+
+li{
+    list-style-type: none;
+}
+
+a{
+    color: rgba(40, 40, 40, 1);
+    text-decoration: none;
+}

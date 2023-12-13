@@ -1,0 +1,13 @@
+.categoryItem {
+    display: flex;
+    width: 316px;
+    flex-direction: column;
+    text-align: center;
+}
+
+.categoryImage {
+    width: 100%;
+    height: 350px;
+    border-radius: 12px;
+    background-repeat: no-repeat;
+}

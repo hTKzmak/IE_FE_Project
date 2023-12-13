@@ -1,0 +1,29 @@
+button {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+
+    width: 284px;
+    padding: 16px 32px;
+
+    color: #FFF;
+    background: rgba(51, 153, 51, 1);
+
+    border-radius: 6px;
+    border: none;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+button:hover {
+    color: #FFF;
+    background: #282828;
+}
+
+/* button:active {
+    color: #282828;
+    border: 1px solid #282828;
+    background: #FFF;
+} */

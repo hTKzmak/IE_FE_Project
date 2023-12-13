@@ -1,0 +1,14 @@
+.banner {
+    width: auto;
+    height: 600px;
+    background: url(./image/img.jpg), rgba(0, 0, 0, 0.4);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 80px 40px 210px;
+}
+
+.banner>h1 {
+    color: #FFF;
+    font-size: 96px;
+    font-weight: 700;
+}

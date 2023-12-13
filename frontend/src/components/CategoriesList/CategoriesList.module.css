@@ -1,0 +1,14 @@
+.categories {
+    display: flex;
+    /* width: 1360px; */
+    align-items: flex-start;
+    gap: 30px;
+    
+    /* display: flex;
+    justify-content: center;  
+    gap: 32px; */
+}
+
+.smth > h1{
+    font-size: 64px;
+}

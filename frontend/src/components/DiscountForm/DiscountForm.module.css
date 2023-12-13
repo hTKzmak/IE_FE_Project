@@ -1,0 +1,33 @@
+.discountForm {
+    text-align: center;
+    background: linear-gradient(261deg, #0B710B 32.63%, #393 98.96%);
+    padding: 32px 32px 0;
+    border-radius: 12px;
+    /* margin: 40px; */
+    margin-top: 40px;
+}
+
+.fillingForm{
+    display: grid;
+    gap: 32px;
+}
+
+.inputs {
+    display: grid;
+    justify-content: end;
+    gap: 16px;
+}
+
+.form {
+    display: flex;
+    justify-content: space-between;
+    /* gap: 32px; */
+    align-items: center;
+}
+
+.discountForm>h1 {
+    margin-top: 0;
+    color: #FFF;
+    font-size: 64px;
+    font-weight: 700;
+}
