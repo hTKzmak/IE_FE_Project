@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
 import style from "./CategoriesList.module.css"
 import Category from "./components/Category"
+import { Link } from "react-router-dom"
 
 
 function CategoriesList() {
@@ -21,11 +22,13 @@ function CategoriesList() {
             <h1>Categories</h1>
             <div className={style.categories}>
                 {categoires.map(elem =>
-                    <Category
-                        id={elem.id}
-                        img={BASE_URL + elem.image}
-                        title={elem.title}
-                    />
+                    <Link to={`/category/${elem.id}`}>
+                        <Category
+                            id={elem.id}
+                            img={BASE_URL + elem.image}
+                            title={elem.title}
+                        />
+                    </Link>
                 )}
             </div>
         </div>

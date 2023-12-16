@@ -20,10 +20,10 @@ function Header() {
                     <Link to={'/categoires'}>
                         <li>Categories</li>
                     </Link>
-                    <Link to={'/allproducts'}>
+                    <Link to={'/products'}>
                         <li>All products</li>
                     </Link>
-                    <Link to={'/allsales'}>
+                    <Link to={'/products/sales'}>
                         <li>All sales</li>
                     </Link>
                 </ul>

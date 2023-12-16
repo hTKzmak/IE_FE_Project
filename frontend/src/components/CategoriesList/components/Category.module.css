@@ -1,6 +1,6 @@
 .categoryItem {
     display: flex;
-    width: 316px;
+    /* width: 316px; */
     flex-direction: column;
     text-align: center;
 }
