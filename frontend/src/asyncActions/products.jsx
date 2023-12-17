@@ -1,4 +1,4 @@
-import { allProductsAction, allProductsSaleAction, productsByCategoryAction } from "../store/productListReducer"
+import { allProductsAction, allProductsSaleAction, productItemAction, productsByCategoryAction } from "../store/productListReducer"
 
 export function fetchAllProducts(){
     return function(dispatch){
@@ -24,5 +24,13 @@ export function fetchProductsByCategories(id){
         fetch('http://localhost:3333/categories/'+id)
             .then(res => res.json())
             .then(data => dispatch(productsByCategoryAction(data)))
+    }
+}
+
+export function fetchProductItem(id) {
+    return function (dispatch) {
+        fetch('http://localhost:3333/products/' + id)
+            .then(res => res.json())
+            .then(data => dispatch(productItemAction(data)))
     }
 }

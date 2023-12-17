@@ -1,4 +1,4 @@
-import { useLocation, useParams } from "react-router-dom"
+import { Link, useLocation, useParams } from "react-router-dom"
 import { useDispatch, useSelector } from "react-redux"
 import { useEffect } from "react"
 import { fetchAllProducts, fetchAllProductsSale, fetchProductsByCategories } from "../asyncActions/products"
@@ -10,7 +10,7 @@ function ProductPage({ type }) {
     const { categories_name, products } = useSelector(store => store.productList)
     const dispatch = useDispatch()
     const location = useLocation()
-    const {id} = useParams()
+    const { id } = useParams()
 
     useEffect(() => {
         if (type === 'all') {
@@ -19,7 +19,7 @@ function ProductPage({ type }) {
         else if (type === 'sale') {
             dispatch(fetchAllProductsSale())
         }
-        else if(type === 'categories'){
+        else if (type === 'categories') {
             dispatch(fetchProductsByCategories(id))
         }
         document.body.scrollIntoView({ behavior: 'smooth' })
@@ -30,13 +30,15 @@ function ProductPage({ type }) {
             <h1>{categories_name}</h1>
             <div className="productsList">
                 {products.map(elem =>
-                    <ProductItem
-                        id={elem.id}
-                        img={BASE_URL + elem.image}
-                        title={elem.title}
-                        price={elem.price}
-                        discount={elem.discont_price}
-                    />
+                    <Link to={`/products/${elem.id}`}>
+                        <ProductItem
+                            id={elem.id}
+                            img={BASE_URL + elem.image}
+                            title={elem.title}
+                            price={elem.price}
+                            discount={elem.discont_price}
+                        />
+                    </Link>
                 )}
             </div>
         </div>

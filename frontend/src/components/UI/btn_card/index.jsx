@@ -1,8 +1,8 @@
-import "./Button.module.css"
+import style from "./Button.module.css"
 
 function Button({title, onclick, ...otherProps}){
     return(
-        <button
+        <button className={style.btn}
             {...otherProps}
             onClick={onclick}
         >
