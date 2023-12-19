@@ -10,6 +10,11 @@ function CategoriesList() {
 
     const [categoires, setCategories] = useState([])
 
+
+    if(window.location.href == 'http://localhost:3000/'){
+        categoires.splice(4, 1)
+    }
+
     // GET запрос
     useEffect(() => {
         fetch(BASE_URL + '/categories/all')
@@ -18,7 +23,7 @@ function CategoriesList() {
     }, [])
 
     return (
-        <div className={style.smth}>
+        <div className={style.main}>
             <h1>Categories</h1>
             <div className={style.categories}>
                 {categoires.map(elem =>
