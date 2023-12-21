@@ -4,7 +4,7 @@ import { useLocation, useParams } from "react-router-dom"
 import { fetchProductItem } from "../asyncActions/products"
 import Button from "../components/UI/btn_card"
 
-import style from '../components/ProductItemPage/ProductItemPage.module.css'
+import style from '../stylesForPages/ProductItemPage.module.css'
 
 function ProductItemPage() {
 
@@ -52,7 +52,7 @@ function ProductItemPage() {
                             </div>
                             <Button title={'Add to cart'} />
                         </div>
-                        <h1>Description</h1>
+                        <h2>Description</h2>
                         <p>{elem.description}</p>
                     </div>
                 </div>

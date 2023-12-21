@@ -1,6 +1,5 @@
 .categoryItem {
     display: flex;
-    /* width: 316px; */
     flex-direction: column;
     text-align: center;
 }
@@ -10,4 +9,16 @@
     height: 350px;
     border-radius: 12px;
     background-repeat: no-repeat;
+}
+
+@media screen and (max-width: 1400px) {
+    .categoryItem {
+        width: 316px;
+        justify-content: center;
+    }
+
+    .categoryItem>a {
+        display: flex;
+        justify-content: center;
+    }
 }

@@ -1,14 +1,27 @@
 .categories {
     display: flex;
-    /* width: 1360px; */
     align-items: flex-start;
     gap: 30px;
-    
-    /* display: flex;
-    justify-content: center;  
-    gap: 32px; */
 }
 
-.main > h1{
+.main>h1 {
     font-size: 64px;
+}
+
+@media screen and (max-width: 1400px) {
+    .main {
+        text-align: center;
+    }
+
+    .main>h1 {
+        font-size: 40px;
+    }
+
+    .categories {
+        display: flex;
+        justify-content: center;
+        align-content: flex-start;
+        gap: 70px;
+        flex-wrap: wrap;
+    }
 }

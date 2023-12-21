@@ -12,3 +12,22 @@
     font-size: 96px;
     font-weight: 700;
 }
+
+@media screen and (max-width: 1000px) {
+
+    .banner {
+        height: 400px;
+        display: grid;
+        justify-items: center;
+    }
+
+    .banner > button{
+        height: fit-content;
+    }
+
+    .banner>h1 {
+        font-size: 50px;
+        text-align: center;
+    }
+    
+}

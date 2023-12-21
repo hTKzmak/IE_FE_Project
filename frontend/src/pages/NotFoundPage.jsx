@@ -4,13 +4,15 @@ import Button from "../components/UI/btn_card";
 import cactusImg from '../images/cactus.png'
 import { ReactComponent as Four } from "../images/4.svg"
 
+import style from '../stylesForPages/NotFoundPage.module.css'
+
 function NotFoundPage() {
 
     const navigate = useNavigate();
 
     return (
-        <div className="content errorPage">
-            <div className="errorSign">
+        <div className={style.errorPage}>
+            <div className={style.errorSign}>
                 <Four />
                 <img src={cactusImg} alt="cactus" />
                 <Four />

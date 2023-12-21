@@ -11,6 +11,20 @@
     /* gap: 32px; */
 }
 
+.productInfo>h2 {
+    font-size: 20px;
+    font-weight: 600;
+
+    color: #282828;
+}
+
+.productInfo>p {
+    font-size: 16px;
+    font-weight: 400;
+
+    color: #282828;
+}
+
 .price,
 .ProductAddToCartButton {
     display: flex;
@@ -20,7 +34,7 @@
 
 .itemImage {
     border-radius: 12px;
-    width: 30%;
+    width: 50%;
 }
 
 .itemCount {
@@ -53,3 +67,22 @@
     border-top: 1px solid #DDD;
     border-bottom: 1px solid #DDD;
 }
+
+@media screen and (max-width: 1300px) {
+    .itemImage {
+        width: 50%;
+        height: 50%;
+        margin: 10px;
+    }
+}
+
+/* @media screen and (max-width: 970px) {
+    .product {
+        display: grid;
+        justify-content: center;
+    }
+
+    .itemImage {
+        width: 50%;
+    }
+} */

@@ -3,11 +3,10 @@
     background: linear-gradient(261deg, #0B710B 32.63%, #393 98.96%);
     padding: 32px 32px 0;
     border-radius: 12px;
-    /* margin: 40px; */
     margin-top: 40px;
 }
 
-.fillingForm{
+.fillingForm {
     display: grid;
     gap: 32px;
 }
@@ -20,9 +19,9 @@
 
 .form {
     display: flex;
-    justify-content: space-between;
-    /* gap: 32px; */
+    justify-content: center;
     align-items: center;
+    gap: 10vw;
 }
 
 .discountForm>h1 {
@@ -31,3 +30,38 @@
     font-size: 64px;
     font-weight: 700;
 }
+
+@media screen and (max-width: 1400px) {
+
+    .discountForm {
+        padding: 32px;
+    }
+
+    .form {
+        display: flex;
+        justify-content: center;
+    }
+
+    .form>img {
+        display: none;
+    }
+
+    .fillingForm>button {
+        width: auto;
+    }
+
+    .inputs {
+        justify-content: center;
+    }
+
+    .inputs>input {
+        width: auto;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .discountForm>h1 {
+        font-size: 40px;
+    }
+}
+

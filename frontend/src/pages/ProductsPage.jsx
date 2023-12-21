@@ -5,6 +5,7 @@ import { fetchAllProducts, fetchAllProductsSale, fetchProductsByCategories } fro
 import ProductItem from "../components/ProductItem"
 import { filterByOptionAction, filterByPriceAction, filterBySaleAction } from "../store/productListReducer"
 
+import style from '../stylesForPages/ProductsPage.module.css'
 
 function ProductPage({ type }) {
     const BASE_URL = 'http://localhost:3333/'
@@ -50,18 +51,18 @@ function ProductPage({ type }) {
     return (
         <div className="content section">
             <h1>{categories_name}</h1>
-            <div className="form">
+            <div className={style.form}>
                 <form onChange={formHandler}>
                     Price
-                    <input className="inputForm" name="min" type="number" placeholder="from" />
-                    <input className="inputForm" name="max" type="number" placeholder="to" />
+                    <input className={style.inputForm} name="min" type="number" placeholder="from" />
+                    <input className={style.inputForm} name="max" type="number" placeholder="to" />
                 </form>
                 <label style={{ display: (categories_name) == 'Discounted products' ? 'none' : 'flex' }}>
                     Discounted items:
                     <input type="checkbox" onClick={checkboxHandle} />
                 </label>
                 Sorted
-                <select className="select" onClick={optionHandler}>
+                <select className={style.select} onClick={optionHandler}>
                     <option id="0">Default</option>
                     <option id="1">From $0 to $10</option>
                     <option id="2">From $10 to $20</option>
@@ -69,7 +70,7 @@ function ProductPage({ type }) {
                     <option id="4">From $30 to $50</option>
                 </select>
             </div>
-            <div className="productsList">
+            <div className={style.productsList}>
                 {productsList.map(elem =>
                     <Link to={`/products/${elem.id}`}>
                         <ProductItem

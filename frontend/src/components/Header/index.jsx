@@ -1,10 +1,12 @@
-import "./Header.module.css"
+import style from "./Header.module.css"
 import { ReactComponent as Logo } from "./icons/logo.svg"
 import { ReactComponent as Basket } from "./icons/basketEmpty.svg"
 
 import { Link } from 'react-router-dom'
+import { useState } from "react"
 
 function Header() {
+
     return (
         <header>
             <div className="iefe-logo">
@@ -27,6 +29,7 @@ function Header() {
                         <li>All sales</li>
                     </Link>
                 </ul>
+                <button className={style.forMobile}>lol</button>
             </nav>
             <div className="iefe-cart">
                 <Link to={'/basket'}>
