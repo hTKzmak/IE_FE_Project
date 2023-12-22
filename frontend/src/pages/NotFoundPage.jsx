@@ -4,7 +4,7 @@ import Button from "../components/UI/btn_card";
 import cactusImg from '../images/cactus.png'
 import { ReactComponent as Four } from "../images/4.svg"
 
-import style from '../stylesForPages/NotFoundPage.module.css'
+import style from './stylesForPages/NotFoundPage.module.css'
 
 function NotFoundPage() {
 

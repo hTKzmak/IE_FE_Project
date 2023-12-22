@@ -5,7 +5,7 @@ import { fetchAllProducts, fetchAllProductsSale, fetchProductsByCategories } fro
 import ProductItem from "../components/ProductItem"
 import { filterByOptionAction, filterByPriceAction, filterBySaleAction } from "../store/productListReducer"
 
-import style from '../stylesForPages/ProductsPage.module.css'
+import style from './stylesForPages/ProductsPage.module.css'
 
 function ProductPage({ type }) {
     const BASE_URL = 'http://localhost:3333/'

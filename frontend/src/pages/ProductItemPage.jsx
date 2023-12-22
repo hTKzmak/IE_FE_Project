@@ -4,7 +4,7 @@ import { useLocation, useParams } from "react-router-dom"
 import { fetchProductItem } from "../asyncActions/products"
 import Button from "../components/UI/btn_card"
 
-import style from '../stylesForPages/ProductItemPage.module.css'
+import style from './stylesForPages/ProductItemPage.module.css'
 
 function ProductItemPage() {
 
@@ -16,17 +16,17 @@ function ProductItemPage() {
 
 
     const [count, setCount] = useState(1)
-    function IncrCount(){
-        if(count < 25){
+    function IncrCount() {
+        if (count < 25) {
             setCount(count + 1)
         }
     }
-    function DecrCount(){
-        if(count > 1){
+    function DecrCount() {
+        if (count > 1) {
             setCount(count - 1)
         }
     }
-    
+
 
     useEffect(() => {
         dispatch(fetchProductItem(id))
@@ -39,6 +39,9 @@ function ProductItemPage() {
                 <div className={style.product}>
                     <img src={BASE_URL + elem.image} alt="img_item" className={style.itemImage} />
                     <div className={style.productInfo}>
+                        <div className={style.forMobile}>
+                            <img src={BASE_URL + elem.image} alt="img_item" />
+                        </div>
                         <h1>{elem.title}</h1>
                         <div className={style.price}>
                             <h1>${elem.price}</h1>
