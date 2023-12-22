@@ -10,7 +10,6 @@ function CategoriesList() {
 
     const [categoires, setCategories] = useState([])
 
-
     if(window.location.href == 'http://localhost:3000/'){
         categoires.splice(4, 1)
     }

@@ -5,6 +5,7 @@ import { fetchProductItem } from "../asyncActions/products"
 import Button from "../components/UI/btn_card"
 
 import style from './stylesForPages/ProductItemPage.module.css'
+import { addNewItemAction } from "../store/cartReducer"
 
 function ProductItemPage() {
 
@@ -16,6 +17,7 @@ function ProductItemPage() {
 
 
     const [count, setCount] = useState(1)
+    
     function IncrCount() {
         if (count < 25) {
             setCount(count + 1)
@@ -44,8 +46,16 @@ function ProductItemPage() {
                         </div>
                         <h1>{elem.title}</h1>
                         <div className={style.price}>
-                            <h1>${elem.price}</h1>
-                            <h3>{elem.discont_price !== null ? ('$' + elem.discont_price) : ''}</h3>
+
+                            {elem.discont_price !== null ? (
+                                <>
+                                    <h1>${elem.discont_price}</h1>
+                                    <h3>${elem.price}</h3>
+                                </>
+                            ) : (
+                                <h1>${elem.price}</h1>
+                            )}
+
                         </div>
                         <div className={style.ProductAddToCartButton}>
                             <div className={style.itemCount}>
@@ -53,7 +63,7 @@ function ProductItemPage() {
                                 <p>{count}</p>
                                 <button onClick={() => DecrCount()}>-</button>
                             </div>
-                            <Button title={'Add to cart'} />
+                            <Button onclick={() => dispatch(addNewItemAction({ ...elem, count: 1 }))} title={'Add to cart'} />
                         </div>
                         <h2>Description</h2>
                         <p>{elem.description}</p>

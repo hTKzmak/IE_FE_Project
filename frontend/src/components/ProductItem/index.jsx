@@ -8,8 +8,14 @@ function ProductItem({ id, img, title, price, discount }) {
             <div className={style.productInfo}>
                 <p>{title}</p>
                 <div className={style.priceInfo}>
-                    <h2>${price}</h2>
-                    <h3>{discount !== null ? ('$' + discount) : ''}</h3>
+                    {discount !== null ? (
+                        <>
+                            <h1>${discount}</h1>
+                            <h3>${price}</h3>
+                        </>
+                    ) : (
+                        <h1>${price}</h1>
+                    )}
                 </div>
             </div>
         </div>
