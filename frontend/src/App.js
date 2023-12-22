@@ -10,12 +10,24 @@ import NotFoundPage from './pages/NotFoundPage';
 import BasketPage from './pages/BasketPage';
 import HomePage from './pages/HomePage';
 import ProductItemPage from './pages/ProductItemPage';
+import { useState } from 'react';
+import Menu from './components/Menu';
 
 
 function App() {
+
+  const [menuActive, setMenuActive] = useState(false)
+
   return (
     <div>
-      <Header />
+      <Header
+        active={menuActive}
+        setActive={setMenuActive}
+      />
+      <Menu
+        active={menuActive}
+        setActive={setMenuActive}
+      />
       <Routes>
         <Route path='/' element={<HomePage />} />
         <Route path='/categoires' element={<CategoriesPage />} />

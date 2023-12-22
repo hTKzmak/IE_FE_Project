@@ -29,19 +29,34 @@ h3 {
 }
 
 .section>h1 {
-    font-size: 64px;
+    font-size: 60px;
     font-weight: 700;
 }
 
+/* данная стилизация убирает стрелочки с input типа number */
+
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
-    /* display: none; <- Crashes Chrome on hover */
     -webkit-appearance: none;
     margin: 0;
-    /* <-- Apparently some margin are still there even though it's hidden */
 }
 
 input[type=number] {
     -moz-appearance: textfield;
-    /* Firefox */
+}
+
+/* для меню */
+
+.menu{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 150px;
+    left: 0;
+    transform: translateY(100%);
+    transition: all 0.2s;
+}
+
+.menu.active{
+    transform: translateY(0);
 }
