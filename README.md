@@ -1,6 +1,7 @@
 # IE_FE_Project
 
-Task: https://docs.google.com/document/d/1WR40Y1VMSLk6b1ayjvdkvroOiiyH_A9Qzy5URhrSp0E/edit?usp=sharing
+# Задание:
+https://docs.google.com/document/d/1WR40Y1VMSLk6b1ayjvdkvroOiiyH_A9Qzy5URhrSp0E/edit?usp=sharing
 
 # Что реализовано:
 1) Переход по ссылкам в Header
@@ -12,3 +13,12 @@ Task: https://docs.google.com/document/d/1WR40Y1VMSLk6b1ayjvdkvroOiiyH_A9Qzy5URh
 7) Изменение количества товара для добавления в корзину на странице с определённым товаром
 8) Реализованы Categories и Sales в HomePage
 9) Реализована фильтрация товаров
+10) Мобильная версия сайта
+
+# Что ещё не реализовано:
+1) Не до конца доделана система корзины (добавление товара)
+2) Всплывающее окно после заполнение формы
+3) Проверку ввода в формах заполнения
+4) Кнопка покупки при наведении на карточку товара
+5) Иконка кол-ва товаров в корзине
+6) Иконка процента скидки в карточках товара
