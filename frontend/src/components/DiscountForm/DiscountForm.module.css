@@ -21,7 +21,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 10vw;
+    gap: 50px;
 }
 
 .discountForm>h1 {

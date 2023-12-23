@@ -10,7 +10,7 @@ function CategoriesList() {
 
     const [categoires, setCategories] = useState([])
 
-    if(window.location.href == 'http://localhost:3000/'){
+    if (window.location.href == 'http://localhost:3000/') {
         categoires.splice(4, 1)
     }
 
@@ -26,13 +26,15 @@ function CategoriesList() {
             <h1>Categories</h1>
             <div className={style.categories}>
                 {categoires.map(elem =>
-                    <Link to={`/category/${elem.id}`}>
-                        <Category
-                            id={elem.id}
-                            img={BASE_URL + elem.image}
-                            title={elem.title}
-                        />
-                    </Link>
+                    <div key={elem.id}>
+                        <Link to={`/category/${elem.id}`}>
+                            <Category
+                                id={elem.id}
+                                img={BASE_URL + elem.image}
+                                title={elem.title}
+                            />
+                        </Link>
+                    </div>
                 )}
             </div>
         </div>

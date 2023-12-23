@@ -23,3 +23,38 @@
     width: 100%;
     border-bottom: 1px solid #DDD;
 }
+
+.salesMedia{
+    position: relative;
+    width: auto;
+    height: auto;
+}
+
+.salesMedia>button{
+    display: none;
+    justify-content: center;
+    position: absolute;
+    margin: 80% 5%;
+}
+
+.productItem:hover{
+    .salesMedia>button{
+        display: flex;
+    } 
+}
+
+.rebate {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    position: absolute;
+    margin: 10px 0 10px 77%;
+    
+    width: 63px;
+    height: 34px;
+
+    border-radius: 6px;
+    background: #393;
+    color: white;
+}

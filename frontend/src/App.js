@@ -13,7 +13,6 @@ import ProductItemPage from './pages/ProductItemPage';
 import { useState } from 'react';
 import Menu from './components/Menu';
 
-
 function App() {
 
   const [menuActive, setMenuActive] = useState(false)

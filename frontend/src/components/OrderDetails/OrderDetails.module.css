@@ -1,0 +1,34 @@
+.orderForm {
+    display: grid;
+    width: 548px;
+    height: 620px;
+    padding: 32px;
+    align-items: flex-start;
+    gap: 32px;
+
+    border-radius: 12px;
+    background: #F1F3F4;
+}
+
+.totalPrice {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.text>h2,
+.totalPrice>h2 {
+    color: #8B8B8B;
+    font-size: 40px;
+    font-weight: 500;
+}
+
+.form{
+    display: grid;
+    gap: 16px;
+}
+
+.form>input,
+.form>button{
+    width: auto;
+}

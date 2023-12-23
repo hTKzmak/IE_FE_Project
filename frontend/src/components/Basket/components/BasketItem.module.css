@@ -1,0 +1,89 @@
+.cartItem {
+    display: flex;
+    /* width: 780px; */
+    gap: 32px;
+
+    border-radius: 12px;
+    border: 1px solid #DDD;
+}
+
+.cartItem>img {
+    width: 200px;
+
+    border-radius: 12px 0px 0px 12px;
+    border: 1px solid #DDD;
+}
+
+.content {
+    display: grid;
+    width: stretch;
+    padding: 32px 32px 32px 0px;
+    grid-gap: inherit;
+}
+
+.titleAndBtn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.titleAndBtn>h4 {
+    font-size: 20px;
+    font-weight: 500;
+    margin: 0;
+}
+
+.titleAndBtn>button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.countAndPrice {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    align-self: stretch;
+}
+
+.itemCount {
+    display: flex;
+    height: 30px;
+    align-items: center;
+}
+
+.itemCount>button {
+    display: flex;
+    width: 58px;
+    height: 58px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 6px;
+    border: 1px solid #DDD;
+    background: none;
+}
+
+.itemCount>button:hover {
+    background: #DDD;
+}
+
+.itemCount>p {
+    display: flex;
+    width: 96px;
+    height: 58px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    border-top: 1px solid #DDD;
+    border-bottom: 1px solid #DDD;
+}
+
+.itemPrice {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+}

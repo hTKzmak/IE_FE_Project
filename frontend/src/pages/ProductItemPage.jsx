@@ -2,10 +2,10 @@ import { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { useLocation, useParams } from "react-router-dom"
 import { fetchProductItem } from "../asyncActions/products"
-import Button from "../components/UI/btn_card"
 
 import style from './stylesForPages/ProductItemPage.module.css'
 import { addNewItemAction } from "../store/cartReducer"
+import Button from "../components/UI/Button"
 
 function ProductItemPage() {
 
@@ -16,29 +16,30 @@ function ProductItemPage() {
     const { id } = useParams()
 
 
-    const [count, setCount] = useState(1)
-    
-    function IncrCount() {
-        if (count < 25) {
-            setCount(count + 1)
-        }
-    }
-    function DecrCount() {
-        if (count > 1) {
-            setCount(count - 1)
-        }
-    }
-
+    const [counter, setCounter] = useState(1)
 
     useEffect(() => {
         dispatch(fetchProductItem(id))
         document.body.scrollIntoView({ behavior: 'smooth' })
     }, [location.pathname])
 
+
+    function IncrCount() {
+        if (counter < 25) {
+            setCounter(counter + 1)
+        }
+    }
+    function DecrCount() {
+        if (counter > 1) {
+            setCounter(counter - 1)
+        }
+    }
+
+
     return (
         <div className="content section">
             {products.map(elem =>
-                <div className={style.product}>
+                <div className={style.product} key={elem.id}>
                     <img src={BASE_URL + elem.image} alt="img_item" className={style.itemImage} />
                     <div className={style.productInfo}>
                         <div className={style.forMobile}>
@@ -50,7 +51,10 @@ function ProductItemPage() {
                             {elem.discont_price !== null ? (
                                 <>
                                     <h1>${elem.discont_price}</h1>
-                                    <h3>${elem.price}</h3>
+                                    <div className={style.salesMedia}>
+                                        <h3>${elem.price}</h3>
+                                        <div className={style.rebate}>{Math.round((elem.price - elem.discont_price) / elem.price * 100)}%</div>
+                                    </div>
                                 </>
                             ) : (
                                 <h1>${elem.price}</h1>
@@ -59,11 +63,11 @@ function ProductItemPage() {
                         </div>
                         <div className={style.ProductAddToCartButton}>
                             <div className={style.itemCount}>
-                                <button onClick={() => IncrCount()}>+</button>
-                                <p>{count}</p>
                                 <button onClick={() => DecrCount()}>-</button>
+                                <p>{counter}</p>
+                                <button onClick={() => IncrCount()}>+</button>
                             </div>
-                            <Button onclick={() => dispatch(addNewItemAction({ ...elem, count: 1 }))} title={'Add to cart'} />
+                            <Button onclick={() => dispatch(addNewItemAction({ ...elem, count: counter }))} title={'Add to cart'} />
                         </div>
                         <h2>Description</h2>
                         <p>{elem.description}</p>

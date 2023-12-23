@@ -1,44 +1,46 @@
 import { useNavigate } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux"
+import { useSelector } from "react-redux"
 
-import Button from "../UI/btn_card";
-import { changeCountAction } from "../../store/cartReducer";
+import Button from "../UI/Button";
+import BasketItem from "./components/BasketItem";
 
-// import style from './Basket.module.css'
+import style from './Basket.module.css'
+import OrderDetails from "../OrderDetails";
 
 function Basket() {
 
-    const dispatch = useDispatch()
     const cartList = useSelector(store => store.cartList)
-
-    const countAction = (id, count) => dispatch(changeCountAction({ id, count }))
 
     const navigate = useNavigate()
 
-    console.log(cartList)
-    console.log(cartList.length)
-
     if (cartList.length > 0) {
         return (
-            <div>
-                {cartList.map(elem =>
-                    <div key={elem.id}>
-                        <h1 style={{ color: 'red' }}>{elem.title}</h1>
-                        <h4>${elem.price}</h4>
-                        <p>{elem.description}</p>
-                        <div style={{ display: 'flex', gap: '10px', height: '30px', alignItems: 'center' }}>
-                            <button onClick={() => countAction(elem.id, -1)}>-</button>
-                            <p>{elem.count}</p>
-                            <button onClick={() => countAction(elem.id, 1)}>+</button>
-                        </div>
+            <div className="section">
+                <h1>Shopping cart</h1>
+                <div className="basketInfo">
+                    <div className={style.basketList}>
+                        {cartList.map(elem =>
+                            <div key={elem.id} >
+                                <BasketItem
+                                    id={elem.id}
+                                    price={elem.price}
+                                    discont={elem.discont_price}
+                                    image={elem.image}
+                                    title={elem.title}
+                                    count={elem.count}
+                                />
+                            </div>
+                        )
+                        }
                     </div>
-                )}
-            </div>
+                    <OrderDetails />
+                </div>
+            </div >
         )
     }
     else {
         return (
-            <div>
+            <div className="section">
                 <h1>Shopping cart</h1>
                 <p>Looks like you have no items in your basket currently.</p>
                 <Button title={"Continue Shopping"} onclick={() => navigate('/products')} />

@@ -2,9 +2,9 @@ import { useNavigate } from "react-router-dom";
 
 import cactusImg from './images/cactus.png'
 import { ReactComponent as Four } from "./images/4.svg"
-import Button from '../UI/btn_card'
 
 import style from './NotFound.module.css'
+import Button from "../UI/Button";
 
 function NotFound() {
 

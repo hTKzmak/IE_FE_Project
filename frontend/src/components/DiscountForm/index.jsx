@@ -1,8 +1,8 @@
 import BtnBaner from "../UI/btn_banner";
-import Input from "../UI/input";
 import discountImage from './image/discountForm.png'
 
 import style from "./DiscountForm.module.css"
+import Input from "../UI/Input";
 
 
 function DiscountForm() {
@@ -13,9 +13,9 @@ function DiscountForm() {
                 <img src={discountImage} alt="discount_image" />
                 <div className={style.fillingForm}>
                     <div className={style.inputs}>
-                        <Input type={"text"} id={"inputName"} placeholder={"Name"} />
-                        <Input type={"tel"} id={"inputTel"} placeholder={"Phone number"} />
-                        <Input type={"email"} id={"inputEmail"} placeholder={"Email"} />
+                        <Input stylization={"discountForm"} type={"text"} id={"inputName"} placeholder={"Name"} />
+                        <Input stylization={"discountForm"} type={"tel"} id={"inputTel"} placeholder={"Phone number"} />
+                        <Input stylization={"discountForm"} type={"email"} id={"inputEmail"} placeholder={"Email"} />
                     </div>
                     <BtnBaner title={"Get a discount"} />
                 </div>

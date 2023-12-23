@@ -4,6 +4,7 @@ const defaultState = []
 
 const ADD_NEW_ITEM = 'ADD_NEW_ITEM'
 const CHANGE_COUNT = 'CHANGE_COUNT'
+const DELETE_ITEM = 'DELETE_ITEM'
 
 function changeCountItem(array, id, count) {
     return array.map(elem => {
@@ -18,7 +19,7 @@ export const cartReducer = (state = defaultState, action) => {
     switch (action.type) {
         case ADD_NEW_ITEM:
 
-            let { id, title, image, price, count } = action.payload
+            let { id, title, image, price, discont_price, count } = action.payload
 
             if (state.find(elem => elem.id === id)) {
                 changeCountItem(state, id, count)
@@ -30,18 +31,20 @@ export const cartReducer = (state = defaultState, action) => {
                     title,
                     image,
                     price,
+                    discont_price,
                     count
                 }
                 return [...state, new_item]
             }
         case CHANGE_COUNT:
             let findItem = state.find(elem => elem.id === action.payload.id)
-            if(action.payload.count == -1 && findItem.count == 1){
+            if (action.payload.count === -1 && findItem.count === 1) {
                 return state.filter(elem => elem.id !== action.payload.id)
-            }
-            else{
+            } else {
                 return changeCountItem(state, action.payload.id, action.payload.count)
             }
+        case DELETE_ITEM:
+            return state.filter(elem => elem.id !== action.payload)
         default:
             return state
     }
@@ -49,3 +52,4 @@ export const cartReducer = (state = defaultState, action) => {
 
 export const addNewItemAction = (payload) => ({ type: ADD_NEW_ITEM, payload })
 export const changeCountAction = (payload) => ({ type: CHANGE_COUNT, payload })
+export const deleteItemAction = (payload) => ({ type: DELETE_ITEM, payload })

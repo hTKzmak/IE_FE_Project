@@ -1,8 +1,9 @@
-import "./Input.module.css"
+// import style from "./Input.module.css"
 
-function Input({type, id, placeholder, ...otherProps}){
-    return(
-        <input
+function Input({ stylization, type, id, placeholder, ...otherProps }) {
+
+    return (
+        <input className={stylization}
             {...otherProps}
             type={type}
             id={id}

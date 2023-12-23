@@ -1,4 +1,4 @@
-import Button from "../UI/btn_card";
+import Button from "../UI/Button";
 import style from "./Banner.module.css"
 
 

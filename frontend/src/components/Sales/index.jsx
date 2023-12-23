@@ -28,15 +28,17 @@ const Sales = forwardRef((props, ref) => {
             <h1>Sales</h1>
             <div className={style.sales}>
                 {sales.map(elem =>
-                    <Link to={`/products/${elem.id}`}>
-                        <ProductItem
-                            id={elem.id}
-                            img={BASE_URL + elem.image}
-                            title={elem.title}
-                            price={elem.price}
-                            discount={elem.discont_price}
-                        />
-                    </Link>
+                    <div key={elem.id}>
+                        <Link to={`/products/${elem.id}`}>
+                            <ProductItem
+                                id={elem.id}
+                                img={BASE_URL + elem.image}
+                                title={elem.title}
+                                price={elem.price}
+                                discount={elem.discont_price}
+                            />
+                        </Link>
+                    </div>
                 )}
             </div>
         </div>
