@@ -87,3 +87,46 @@
     align-items: baseline;
     gap: 16px;
 }
+
+@media screen and (max-width: 1000px) {
+    .cartItem{
+        display: grid;
+        width: auto;
+        justify-content: center;
+    }
+
+    .cartItem>img {
+        width: 250px;
+        border-radius: 12px;
+    }
+
+    .content{
+        display: grid;
+        padding: 10px;
+        justify-content: center;
+    }
+    
+    .titleAndBtn{
+        width: 200px;
+        text-align: center;
+    }
+
+    .titleAndBtn > button{
+        display: none;
+    }
+
+    .countAndPrice{
+        display: grid;
+        justify-content: center;
+        justify-items: center;
+    }
+
+}
+
+@media screen and (max-width: 400px) {
+    .cartItem{
+        display: grid;
+        width: 250px;
+        justify-content: center;
+    }
+}

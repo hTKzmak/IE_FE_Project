@@ -11,10 +11,10 @@ function ProductItemPage() {
 
     const BASE_URL = 'http://localhost:3333/'
     const { products } = useSelector(store => store.productList)
+    const cartList = useSelector(store => store.cartList)
     const dispatch = useDispatch()
     const location = useLocation()
     const { id } = useParams()
-
 
     const [counter, setCounter] = useState(1)
 
@@ -35,6 +35,20 @@ function ProductItemPage() {
         }
     }
 
+
+    // // Чтение значения из localStorage
+    // const basketValue = localStorage.getItem('basket');
+
+    // // Преобразование JSON-строки в объект JavaScript
+    // const basketObj = JSON.parse(basketValue);
+
+    // let matchingItem;
+    // if (basketObj && basketObj.Basket && basketObj.Basket.length > 0){
+    //     matchingItem = basketObj.Basket.find(item => item.id);
+    // }
+    // else{
+    //     console.log('false')
+    // }
 
     return (
         <div className="content section">
@@ -63,10 +77,11 @@ function ProductItemPage() {
                         </div>
                         <div className={style.ProductAddToCartButton}>
                             <div className={style.itemCount}>
-                                <button onClick={() => DecrCount()}>-</button>
+                                <button onClick={() => DecrCount(elem.id)}>-</button>
                                 <p>{counter}</p>
-                                <button onClick={() => IncrCount()}>+</button>
+                                <button onClick={() => IncrCount(elem.id)}>+</button>
                             </div>
+                            {/* <Button disabled={matchingItem.id == elem.id} onclick={() => dispatch(addNewItemAction({ ...elem, count: counter }))} title={(matchingItem.id == elem.id) ? 'Added' : 'Add to cart'} /> */}
                             <Button onclick={() => dispatch(addNewItemAction({ ...elem, count: counter }))} title={'Add to cart'} />
                         </div>
                         <h2>Description</h2>

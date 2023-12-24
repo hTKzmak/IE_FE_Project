@@ -6,6 +6,7 @@ import BasketItem from "./components/BasketItem";
 
 import style from './Basket.module.css'
 import OrderDetails from "../OrderDetails";
+import { useEffect } from "react";
 
 function Basket() {
 
@@ -17,10 +18,10 @@ function Basket() {
         return (
             <div className="section">
                 <h1>Shopping cart</h1>
-                <div className="basketInfo">
+                <div className={style.basketInfo}>
                     <div className={style.basketList}>
                         {cartList.map(elem =>
-                            <div key={elem.id} >
+                            <div className={style.basketItem_list} key={elem.id} >
                                 <BasketItem
                                     id={elem.id}
                                     price={elem.price}

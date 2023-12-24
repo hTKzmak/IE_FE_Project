@@ -59,6 +59,10 @@
     appearance: none;
 }
 
+.checkbox{
+    accent-color: #393;
+}
+
 @media screen and (max-width: 1500px) {
     .productsList {
         justify-content: center;

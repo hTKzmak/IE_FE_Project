@@ -38,6 +38,20 @@ h3 {
     font-weight: 700;
 }
 
+@media screen and (max-width: 600px) {
+
+    h1 {
+        font-size: 20px;
+        font-weight: 700;
+    }
+
+    .section>h1 {
+        font-size: 30px;
+        font-weight: 700;
+        text-align: center;
+    }
+}
+
 /* данная стилизация убирает стрелочки с input типа number */
 
 input::-webkit-outer-spin-button,
@@ -60,6 +74,7 @@ input[type=number] {
     left: 0;
     transform: translateY(100%);
     transition: all 0.2s;
+    z-index: 1;
 }
 
 .menu.active {
@@ -75,7 +90,7 @@ input[type=number] {
 
 /* smth */
 
-.discountForm {
+.dicountForm {
     padding: 16px 32px;
     width: 452px;
 
@@ -110,4 +125,28 @@ input[type=number] {
 
     background: #FFF;
     color: #8B8B8B;
+}
+
+.btnBanner {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+
+    width: 516px;
+    padding: 16px 32px;
+
+    color: #282828;
+    background: #FFF;
+
+    border-radius: 6px;
+    border: none;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.btnBanner:hover {
+    color: #FFF;
+    background: #282828;
 }

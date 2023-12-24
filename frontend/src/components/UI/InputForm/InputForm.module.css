@@ -1,0 +1,13 @@
+.inputForm {
+    display: grid;
+    gap: 16px;
+}
+
+@media screen and (max-width: 600px) {
+    .inputForm>input{
+        width: 250px;
+    }
+    .inputForm>button{
+        width: auto;
+    }
+}

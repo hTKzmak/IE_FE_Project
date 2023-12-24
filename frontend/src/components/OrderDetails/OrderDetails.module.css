@@ -1,7 +1,7 @@
 .orderForm {
     display: grid;
     width: 548px;
-    height: 620px;
+    height: auto;
     padding: 32px;
     align-items: flex-start;
     gap: 32px;
@@ -32,3 +32,33 @@
 .form>button{
     width: auto;
 }
+
+@media screen and (max-width: 1000px) {
+    .orderForm {
+        width: auto;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .orderForm {
+        height: auto;
+    }
+
+    .totalPrice{
+        display: flex;
+    }
+
+    .form{
+        width: none;
+        justify-content: center;
+    }
+    .form>input{
+        width: 180px;
+    }
+
+    .form>button{
+        width: 250px;
+    }
+
+}
+

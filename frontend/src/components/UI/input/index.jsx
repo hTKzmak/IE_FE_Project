@@ -1,16 +1,10 @@
-// import style from "./Input.module.css"
+import { forwardRef } from "react"
+import './Input.module.css'
 
-function Input({ stylization, type, id, placeholder, ...otherProps }) {
-
-    return (
-        <input className={stylization}
-            {...otherProps}
-            type={type}
-            id={id}
-            placeholder={placeholder}
-        >
-        </input>
+const Input = forwardRef((props, ref) => {
+    return(
+        <input ref={ref} {...props}/>
     )
-}
+})
 
 export default Input

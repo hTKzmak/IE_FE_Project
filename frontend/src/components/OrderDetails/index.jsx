@@ -1,5 +1,4 @@
-import Button from '../UI/Button'
-import Input from '../UI/Input'
+import InputForm from '../UI/InputForm'
 import style from './OrderDetails.module.css'
 
 function OrderDetails() {
@@ -7,17 +6,14 @@ function OrderDetails() {
         <div className={style.orderForm}>
             <div className={style.text}>
                 <h1>Order details</h1>
-                <h2>Items</h2>
+                <h2>4 Items</h2>
                 <div className={style.totalPrice}>
                     <h2>Total</h2>
                     <h1>$300</h1>
                 </div>
             </div>
             <div className={style.form}>
-                <Input stylization={"orderForm"} type={"text"} id={"inputName"} placeholder={"Name"} />
-                <Input stylization={"orderForm"} type={"tel"} id={"inputTel"} placeholder={"Phone Number"} />
-                <Input stylization={"orderForm"} type={"email"} id={"inputEmail"} placeholder={"Email"} />
-                <Button title={"Order"}/>
+                <InputForm title={'Order'} btnStyle={'green'} inputStyle={'orderForm'}/>
             </div>
         </div>
     )

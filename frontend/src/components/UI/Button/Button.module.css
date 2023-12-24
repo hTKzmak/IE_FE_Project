@@ -22,8 +22,9 @@
     background: #282828;
 }
 
-/* button:active {
+.btn:disabled {
     color: #282828;
     border: 1px solid #282828;
     background: #FFF;
-} */
+    cursor: no-drop;
+}

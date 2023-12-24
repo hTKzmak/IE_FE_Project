@@ -2,3 +2,21 @@
     display: grid;
     gap: 16px;
 }
+
+.basketInfo{
+    display: flex;
+    justify-content: space-between;
+}
+
+@media screen and (max-width: 1000px) {
+    .basketInfo{
+        display: grid;
+        justify-content: center;
+        gap: 50px;
+    }
+
+    .basketItem_list{
+        display: grid;
+        justify-content: center;
+    }
+}

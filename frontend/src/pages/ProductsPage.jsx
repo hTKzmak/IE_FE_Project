@@ -59,7 +59,7 @@ function ProductPage({ type }) {
                 </form>
                 <label style={{ display: (categories_name) == 'Discounted products' ? 'none' : 'flex' }}>
                     Discounted items:
-                    <input type="checkbox" onClick={checkboxHandle} />
+                    <input className={style.checkbox} type="checkbox" onClick={checkboxHandle} />
                 </label>
                 Sorted
                 <select className={style.select} onClick={optionHandler}>

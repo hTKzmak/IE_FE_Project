@@ -1,8 +1,11 @@
 import style from "./Button.module.css"
 
-function Button({title, onclick, ...otherProps}){
-    return(
-        <button className={style.btn}
+function Button({ title, onclick, type, disabled, ...otherProps }) {
+    return (
+        <button
+        className={style.btn}
+            type={type}
+            disabled={disabled}
             {...otherProps}
             onClick={onclick}
         >
