@@ -1,6 +1,7 @@
 .inputForm {
     display: grid;
     gap: 16px;
+    text-align: start;
 }
 
 @media screen and (max-width: 600px) {

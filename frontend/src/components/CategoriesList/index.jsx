@@ -2,6 +2,7 @@ import { useState, useEffect } from "react"
 import style from "./CategoriesList.module.css"
 import Category from "./components/Category"
 import { Link } from "react-router-dom"
+import NavigationBtn from "../UI/NavigationBtn"
 
 
 function CategoriesList() {
@@ -23,7 +24,10 @@ function CategoriesList() {
 
     return (
         <div className={style.main}>
-            <h1>Categories</h1>
+            <div className="textAndBtn">
+                <h1>Categories</h1>
+                <NavigationBtn displaytype={window.location.href == 'http://localhost:3000/categoires' ? 'none' : 'flex'} title={'All categories'} href={'/categoires'} />
+            </div>
             <div className={style.categories}>
                 {categoires.map(elem =>
                     <div key={elem.id}>

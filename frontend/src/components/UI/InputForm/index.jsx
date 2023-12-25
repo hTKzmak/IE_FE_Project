@@ -17,6 +17,9 @@ function InputForm({ title, btnStyle, inputStyle, setActivate}) {
         inputTag.forEach(elem => {
             elem.value = ""
         }); 
+
+        let btn = document.getElementsByTagName('button');
+        btn.style = `color: green`
     }
 
     return (

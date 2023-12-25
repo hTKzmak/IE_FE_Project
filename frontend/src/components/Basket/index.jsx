@@ -7,8 +7,9 @@ import BasketItem from "./components/BasketItem";
 import style from './Basket.module.css'
 import OrderDetails from "../OrderDetails";
 import { useEffect } from "react";
+import NavigationBtn from "../UI/NavigationBtn";
 
-function Basket({setActivate}) {
+function Basket({ setActivate }) {
 
     const cartList = useSelector(store => store.cartList)
 
@@ -17,7 +18,10 @@ function Basket({setActivate}) {
     if (cartList.length > 0) {
         return (
             <div className="section">
-                <h1>Shopping cart</h1>
+                <div className="textAndBtn">
+                    <h1>Shopping cart</h1>
+                    <NavigationBtn title={'Back to the store'} href={'/products'} />
+                </div>
                 <div className={style.basketInfo}>
                     <div className={style.basketList}>
                         {cartList.map(elem =>
@@ -34,7 +38,7 @@ function Basket({setActivate}) {
                         )
                         }
                     </div>
-                    <OrderDetails setActivate={setActivate}/>
+                    <OrderDetails setActivate={setActivate} />
                 </div>
             </div >
         )

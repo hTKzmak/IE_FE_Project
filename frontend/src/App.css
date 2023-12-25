@@ -28,6 +28,17 @@ h3 {
     color: rgba(139, 139, 139, 1);
 }
 
+.textAndBtn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.textAndBtn>h1 {
+    font-size: 60px;
+    font-weight: 700;
+}
+
 .section {
     max-width: 1500px;
     margin: 15px auto;
@@ -45,10 +56,19 @@ h3 {
         font-weight: 700;
     }
 
-    .section>h1 {
+    .section>h1,
+    .textAndBtn>h1 {
         font-size: 30px;
         font-weight: 700;
         text-align: center;
+    }
+
+    .textAndBtn {
+        display: contents;
+    }
+
+    .textAndBtn>a {
+        display: none;
     }
 }
 

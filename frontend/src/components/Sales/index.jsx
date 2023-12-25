@@ -2,6 +2,7 @@ import { forwardRef, useEffect, useState } from "react"
 import { Link } from "react-router-dom"
 import style from './Sales.module.css'
 import ProductItem from "../ProductItem"
+import NavigationBtn from "../UI/NavigationBtn"
 
 const Sales = forwardRef((props, ref) => {
 
@@ -25,7 +26,10 @@ const Sales = forwardRef((props, ref) => {
 
     return (
         <div ref={ref} className={style.main}>
-            <h1>Sales</h1>
+            <div className="textAndBtn">
+                <h1>Sales</h1>
+                <NavigationBtn title={'All sales'} href={'/products/sales'} />
+            </div>
             <div className={style.sales}>
                 {sales.map(elem =>
                     <div key={elem.id}>
