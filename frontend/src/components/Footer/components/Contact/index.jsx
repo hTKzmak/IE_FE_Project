@@ -21,7 +21,7 @@ function Contact(){
                 </div>
                 <div className={style.contactBlock}>
                     <p>Address</p>
-                    <a target="_blank" rel="noreferrer" href="https://maps.app.goo.gl/1okmu45voKEVEYGh9"><h1>Dubininskaya Ulitsa, 96, Moscow, Russia, 115093</h1></a>
+                    <a target="_blank" rel="noreferrer" href="https://maps.app.goo.gl/1okmu45voKEVEYGh9"><h1>Dubininskaya Ulitsa, 96, Moscow, <br/> Russia, 115093</h1></a>
                 </div>
                 <div className={style.contactBlock}>
                     <p>Working Hours</p>

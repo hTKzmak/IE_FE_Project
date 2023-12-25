@@ -1,12 +1,14 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import Banner from "../components/Banner";
 import DiscountForm from "../components/DiscountForm";
 import Sales from "../components/Sales";
 import CategoriesList from "../components/CategoriesList";
+import ModalWindow from "../components/ModalWindow";
 
 function HomePage() {
 
     let scrollRef = useRef();
+    const [modalActive, setModalActive] = useState(false)
 
     function salesScroll() {
         scrollRef.current.scrollIntoView({ behavior: 'smooth' })
@@ -14,10 +16,13 @@ function HomePage() {
 
     return (
         <div className="content">
+            <ModalWindow activate={modalActive} setActivate={setModalActive} text={<p>You received a 5% discount on your first order.</p>} />
             <Banner salesScroll={salesScroll} />
             <div className="section">
                 <CategoriesList />
-                <DiscountForm />
+                <DiscountForm
+                    setActivate={setModalActive}
+                />
                 <Sales ref={scrollRef} />
             </div>
         </div>

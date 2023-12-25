@@ -8,7 +8,7 @@ import style from './Basket.module.css'
 import OrderDetails from "../OrderDetails";
 import { useEffect } from "react";
 
-function Basket() {
+function Basket({setActivate}) {
 
     const cartList = useSelector(store => store.cartList)
 
@@ -34,7 +34,7 @@ function Basket() {
                         )
                         }
                     </div>
-                    <OrderDetails />
+                    <OrderDetails setActivate={setActivate}/>
                 </div>
             </div >
         )

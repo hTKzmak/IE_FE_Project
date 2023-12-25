@@ -3,7 +3,7 @@ import style from './InputForm.module.css'
 import Button from '../Button'
 import BtnBaner from '../btn_banner'
 
-function InputForm({ title, btnStyle, inputStyle }) {
+function InputForm({ title, btnStyle, inputStyle, setActivate}) {
 
     let {
         register,
@@ -12,7 +12,11 @@ function InputForm({ title, btnStyle, inputStyle }) {
     } = useForm()
 
     const onSubmit = () => {
-        alert('lol')
+        setActivate(true)
+        let inputTag = document.querySelectorAll('input');
+        inputTag.forEach(elem => {
+            elem.value = ""
+        }); 
     }
 
     return (

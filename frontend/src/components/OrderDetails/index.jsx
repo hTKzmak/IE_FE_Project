@@ -1,7 +1,7 @@
 import InputForm from '../UI/InputForm'
 import style from './OrderDetails.module.css'
 
-function OrderDetails() {
+function OrderDetails({setActivate}) {
     return (
         <div className={style.orderForm}>
             <div className={style.text}>
@@ -13,7 +13,7 @@ function OrderDetails() {
                 </div>
             </div>
             <div className={style.form}>
-                <InputForm title={'Order'} btnStyle={'green'} inputStyle={'orderForm'}/>
+                <InputForm title={'Order'} btnStyle={'green'} inputStyle={'orderForm'} setActivate={setActivate}/>
             </div>
         </div>
     )
