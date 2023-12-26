@@ -67,6 +67,15 @@ h3 {
     font-weight: 700;
 }
 
+/* та самая линия */
+.line {
+    border-top: 2px solid black;
+    align-self: center;
+    flex-grow: 1;
+    border-color: #DDD;
+    margin-left: 32px;
+}
+
 @media screen and (max-width: 1000px) {
     .emptyBasket {
         text-align: center;
@@ -94,6 +103,11 @@ h3 {
     .textAndBtn>a {
         display: none;
     }
+
+    .line {
+        display: none;
+    }
+    
 
 }
 

@@ -26,6 +26,7 @@ const Sales = forwardRef((props, ref) => {
         <div ref={ref} className={style.main}>
             <div className="textAndBtn">
                 <h1>Sales</h1>
+                <div class="line"></div>
                 <NavigationBtn title={'All sales'} href={'/products/sales'} />
             </div>
             <div className={style.sales}>
@@ -35,6 +36,7 @@ const Sales = forwardRef((props, ref) => {
                             <ProductItem
                                 id={elem.id}
                                 img={BASE_URL + elem.image}
+                                imgBtn={elem.image}
                                 title={elem.title}
                                 price={elem.price}
                                 discount={elem.discont_price}

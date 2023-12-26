@@ -19,6 +19,7 @@ function Basket({ setActivate }) {
             <div className="section">
                 <div className="textAndBtn">
                     <h1>Shopping cart</h1>
+                    <div class="line"></div>
                     <NavigationBtn title={'Back to the store'} href={'/products'} />
                 </div>
                 <div className={style.basketInfo}>

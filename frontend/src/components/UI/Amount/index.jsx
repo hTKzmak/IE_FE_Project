@@ -23,7 +23,7 @@ function Amount({ id, count, operations }) {
     return (
         <div className={style.itemCount}>
             <button onClick={handleDecr}>-</button>
-            <p>{count}</p>
+            <div className={style.countValue}>{count}</div>
             <button onClick={handleIncr}>+</button>
         </div>
     );

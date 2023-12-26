@@ -3,10 +3,11 @@ import Button from '../UI/Button'
 import style from './ProductItem.module.css'
 import { addNewItemAction } from '../../store/cartReducer'
 
-function ProductItem({ id, img, title, price, discount }) {
+function ProductItem({ id, img, imgBtn, title, price, discount }) {
 
     // const { products } = useSelector(store => store.productList)
-    // const dispatch = useDispatch()
+    const cart = useSelector(store => store.cartList)
+    const dispatch = useDispatch()
 
     return (
         <div className={style.productItem} key={id}>
@@ -14,7 +15,17 @@ function ProductItem({ id, img, title, price, discount }) {
                 {discount !== null ? (
                     <div className={style.rebate}>{Math.round((price - discount) / price * 100)}%</div>
                 ) : ''}
-                {/* <Button onclick={() => dispatch(addNewItemAction({ id, count: 1 }))} title={'Add to cart'} /> */}
+                <Button 
+                onclick={() => dispatch(addNewItemAction({
+
+                    id: id,
+                    title: title,
+                    price: price,
+                    discont_price: (discount ? discount : null),
+                    count: 1,
+                    image: imgBtn
+
+                }))} title={cart.find(item => item.id === id) ? 'Added' : 'Add to cart'} disabled={cart.find(item => item.id === id) ? true : false} />
                 <img src={img} alt="img_product" className={style.productImage} />
             </div>
             <div className={style.productInfo}>

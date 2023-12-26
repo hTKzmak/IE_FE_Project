@@ -77,6 +77,7 @@ function ProductPage({ type }) {
                             <ProductItem
                                 id={elem.id}
                                 img={BASE_URL + elem.image}
+                                imgBtn={elem.image}
                                 title={elem.title}
                                 price={elem.price}
                                 discount={elem.discont_price}
