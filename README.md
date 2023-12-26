@@ -25,4 +25,3 @@ https://docs.google.com/document/d/1WR40Y1VMSLk6b1ayjvdkvroOiiyH_A9Qzy5URhrSp0E/
 
 # Что ещё не реализовано:
 1) Кнопка покупки при наведении на карточку товара
-2) не решена проблема с count
