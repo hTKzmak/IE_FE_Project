@@ -28,6 +28,24 @@ h3 {
     color: rgba(139, 139, 139, 1);
 }
 
+.cart {
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    
+    margin: -5px;
+    padding: 10px;
+    font-size: 15px;
+    
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    
+    background: #393;
+    color: white;
+}
+
 .textAndBtn {
     display: flex;
     justify-content: space-between;
