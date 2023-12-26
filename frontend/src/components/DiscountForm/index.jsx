@@ -5,6 +5,7 @@ import InputForm from "../UI/InputForm";
 
 
 function DiscountForm({setActivate}) {
+
     return (
         <div className={style.discountForm}>
             <h1>5% off on the first order</h1>

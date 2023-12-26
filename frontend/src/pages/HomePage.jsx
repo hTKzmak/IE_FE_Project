@@ -14,16 +14,18 @@ function HomePage() {
         scrollRef.current.scrollIntoView({ behavior: 'smooth' })
     }
 
+    let categoriesInHomePage = true;
+
     return (
         <div className="content">
             <ModalWindow activate={modalActive} setActivate={setModalActive} text={<p>You received a 5% discount on your first order.</p>} />
             <Banner salesScroll={salesScroll} />
             <div className="section">
-                <CategoriesList />
+                <CategoriesList categoriesInHomePage={categoriesInHomePage} />
                 <DiscountForm
                     setActivate={setModalActive}
                 />
-                <Sales ref={scrollRef} />
+                <Sales ref={scrollRef}/>
             </div>
         </div>
     );

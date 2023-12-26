@@ -24,6 +24,11 @@
     gap: 50px;
 }
 
+.form>img {
+    position: relative;
+    margin-top: auto;
+}
+
 .discountForm>h1 {
     margin-top: 0;
     color: #FFF;

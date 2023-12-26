@@ -10,18 +10,16 @@ const Sales = forwardRef((props, ref) => {
 
     const [sales, setSales] = useState([])
 
-    if (window.location.href == 'http://localhost:3000/') {
-        sales.splice(4, sales.length)
-    }
-
     // GET запрос
     useEffect(() => {
         fetch(BASE_URL + '/products/all')
             .then(res => res.json())
             .then(data => {
                 let filtered_data = data.filter(elem => elem.discont_price)
+                filtered_data.splice(4, filtered_data.length)
                 setSales(filtered_data)
             })
+            document.body.scrollIntoView({ behavior: 'smooth' })
     }, [])
 
     return (
