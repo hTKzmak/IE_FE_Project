@@ -6,6 +6,7 @@ import { fetchProductItem } from "../asyncActions/products"
 import style from './stylesForPages/ProductItemPage.module.css'
 import { addNewItemAction } from "../store/cartReducer"
 import Button from "../components/UI/Button"
+import Amount from "../components/UI/Amount"
 
 function ProductItemPage() {
 
@@ -23,32 +24,14 @@ function ProductItemPage() {
         document.body.scrollIntoView({ behavior: 'smooth' })
     }, [location.pathname])
 
-
-    function IncrCount() {
-        if (counter < 25) {
+    function countOperation(oper) {
+        if (oper === '-') {
+            counter > 1 && setCounter(counter - 1)
+        }
+        else if (oper === '+') {
             setCounter(counter + 1)
         }
     }
-    function DecrCount() {
-        if (counter > 1) {
-            setCounter(counter - 1)
-        }
-    }
-
-
-    // // Чтение значения из localStorage
-    // const basketValue = localStorage.getItem('basket');
-
-    // // Преобразование JSON-строки в объект JavaScript
-    // const basketObj = JSON.parse(basketValue);
-
-    // let matchingItem;
-    // if (basketObj && basketObj.Basket && basketObj.Basket.length > 0){
-    //     matchingItem = basketObj.Basket.find(item => item.id);
-    // }
-    // else{
-    //     console.log('false')
-    // }
 
     return (
         <div className="content section">
@@ -71,18 +54,24 @@ function ProductItemPage() {
                                     </div>
                                 </>
                             ) : (
-                                <h1>${elem.price}</h1>
+                                <h2>${elem.price}</h2>
                             )}
 
                         </div>
                         <div className={style.ProductAddToCartButton}>
                             <div className={style.itemCount}>
-                                <button onClick={() => DecrCount(elem.id)}>-</button>
-                                <p>{counter}</p>
-                                <button onClick={() => IncrCount(elem.id)}>+</button>
+                                <Amount id={id} count={counter} operations={countOperation} />
                             </div>
-                            {/* <Button disabled={matchingItem.id == elem.id} onclick={() => dispatch(addNewItemAction({ ...elem, count: counter }))} title={(matchingItem.id == elem.id) ? 'Added' : 'Add to cart'} /> */}
-                            <Button onclick={() => dispatch(addNewItemAction({ ...elem, count: counter }))} title={'Add to cart'} />
+                            <Button onclick={() => dispatch(addNewItemAction({
+
+                                id: elem.id,
+                                title: elem.title,
+                                price: elem.price,
+                                discont_price: (elem.discont_price ? elem.discont_price : null),
+                                count: counter,
+                                image: elem.image
+
+                            }))} title={'Add to cart'} />
                         </div>
                         <h2>Description</h2>
                         <p>{elem.description}</p>

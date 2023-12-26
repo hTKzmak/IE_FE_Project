@@ -1,14 +1,26 @@
 import { useDispatch } from "react-redux"
 import { decrAction, deleteItemAction, incrAction } from "../../../store/cartReducer"
 
-import {ReactComponent as Delete} from './images/delete.svg'
+import { ReactComponent as Delete } from './images/delete.svg'
 
 import style from './BasketItem.module.css'
+import Amount from "../../UI/Amount"
+import { useState } from "react"
 
 function BasketItem({ id, price, discont, title, image, count }) {
 
     const dispatch = useDispatch()
     const BASE_URL = 'http://localhost:3333/'
+
+    const [counter, setCounter] = useState(1)
+    function countOperation(oper) {
+        if (oper === '-') {
+            counter > 1 && setCounter(counter - 1)
+        }
+        else if (oper === '+') {
+            setCounter(counter + 1)
+        }
+    }
 
     return (
         <div className={style.cartItem} key={id}>
@@ -16,13 +28,11 @@ function BasketItem({ id, price, discont, title, image, count }) {
             <div className={style.content}>
                 <div className={style.titleAndBtn}>
                     <h4>{title}</h4>
-                    <button onClick={() => dispatch(deleteItemAction(id))}><Delete/></button>
+                    <button onClick={() => dispatch(deleteItemAction(id))}><Delete /></button>
                 </div>
                 <div className={style.countAndPrice}>
                     <div className={style.itemCount}>
-                        <button onClick={() => dispatch(decrAction(id))}>-</button>
-                        <p className="countValue">{count}</p>
-                        <button onClick={() => dispatch(incrAction(id))}>+</button>
+                        <Amount id={id} count={counter} operations={countOperation} />
                     </div>
                     <div className={style.itemPrice}>
                         {discont !== undefined && discont !== null ? (

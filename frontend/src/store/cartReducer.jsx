@@ -1,10 +1,15 @@
-// const defaultState = JSON.parse(localStorage.getItem('basket'))?.Basket || [];
-const defaultState = [];
+const defaultState = JSON.parse(localStorage.getItem('basket'))?.Basket || [];
+// const defaultState = [];
 
 // {id, title, image, price, count}
 
+const saveBasket = (basket) => {
+    localStorage.setItem('basket', JSON.stringify({ Basket: basket }));
+};
+
 const ADD_NEW_ITEM = 'ADD_NEW_ITEM'
 const DELETE_ITEM = 'DELETE_ITEM'
+const CHANGE_COUNT = 'CHANGE_COUNT'
 
 const INCR = 'INCR'
 const DECR = 'DECR'
@@ -18,63 +23,38 @@ function changeCountItem(array, id, count) {
     })
 }
 
-// const saveBasket = (basket) => {
-//     localStorage.setItem('basket', JSON.stringify({ Basket: basket }));
-// };
 
 export const cartReducer = (state = defaultState, action) => {
 
     switch (action.type) {
         case ADD_NEW_ITEM:
+            const { id, title, price, discont_price, image, count } = action.payload;
 
-            let { id, title, image, price, discont_price, count } = action.payload
-
-            if (state.find(elem => elem.id === id)) {
-                changeCountItem(state, id, count)
-            }
-
-            else {
-                let new_item = {
+            if (state.find((el) => el.id === id)) {
+                return changeCountItem(state, id, count);
+            } else {
+                const newItem = {
                     id,
                     title,
-                    image,
                     price,
                     discont_price,
+                    image,
                     count,
-                }
-
-                const updatedBasket = [...state, new_item];
-                // saveBasket(updatedBasket);
+                };
+                const updatedBasket = [...state, newItem];
+                saveBasket(updatedBasket);
                 return updatedBasket;
-
-                // return [...state, new_item]
-            }
-        case INCR:
-            return state.map(elem => {
-                if (elem.id === action.payload) {
-                    return { ...elem, count: elem.count + 1 }
-                }
-                // saveBasket(elem);
-                return elem
-            })
-        case DECR:
-
-            const zeroCount = state.findIndex(el => el.id === action.payload)
-
-            if (state[zeroCount].count === 1) {
-                return state.slice(0, zeroCount).concat(state.slice(zeroCount + 1))
             }
 
-            return state.map(elem => {
-                if (elem.id === action.payload) {
-                    return { ...elem, count: elem.count - 1 }
-                }
-                // saveBasket(elem);
-                return elem
-            })
+        case CHANGE_COUNT:
+            const newBasket = changeCountItem(state, action.payload.id, action.payload.count);
+            saveBasket(newBasket);
+            return newBasket;
+
         case DELETE_ITEM:
-            // saveBasket([]);
-            return state.filter(elem => elem.id !== action.payload)
+            let deleteItem = state.filter(elem => elem.id !== action.payload) 
+            saveBasket(deleteItem);
+            return deleteItem
         default:
             return state
     }
@@ -82,6 +62,7 @@ export const cartReducer = (state = defaultState, action) => {
 
 export const addNewItemAction = (payload) => ({ type: ADD_NEW_ITEM, payload })
 export const deleteItemAction = (payload) => ({ type: DELETE_ITEM, payload })
+export const changeCountAction = (payload) => ({ type: CHANGE_COUNT, payload })
 
 export const incrAction = (payload) => ({ type: INCR, payload })
 export const decrAction = (payload) => ({ type: DECR, payload })
