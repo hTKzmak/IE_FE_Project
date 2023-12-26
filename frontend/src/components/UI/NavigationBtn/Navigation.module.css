@@ -12,10 +12,6 @@
     height: fit-content;
 }
 
-.navigation>a {
-    color: #8B8B8B;
-}
-
-.navigation>a:active {
+.navigation:active {
     color: #282828;
 }

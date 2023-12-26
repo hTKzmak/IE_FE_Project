@@ -1,9 +1,8 @@
 import { useForm } from 'react-hook-form'
 import style from './InputForm.module.css'
-import Button from '../Button'
 import BtnBaner from '../btn_banner'
 
-function InputForm({ title, btnStyle, inputStyle, setActivate}) {
+function InputForm({ title, btnStyle, inputStyle, setActivate, orderProducts}) {
 
     let {
         register,

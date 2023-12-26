@@ -12,13 +12,17 @@ function OrderDetails({ setActivate }) {
     const cart = useSelector(store => store.cartList)
     let totalPrice = basketObj.Basket.reduce((acc, item) => acc + ((item.discont_price !== null) ? item.discont_price : item.price), 0);
 
+    function orderProductsFromBasket() {
+        localStorage.clear()
+    }
+
 
     return (
         <div className={style.orderForm}>
             <div className={style.text}>
                 <h1>Order details</h1>
                 {/* итоговое кол-во товаров: */}
-                <h2>{cart.reduce((total, item) => total + item.count , 0)} Items</h2>
+                <h2>{cart.reduce((total, item) => total + item.count, 0)} Items</h2>
                 <div className={style.totalPrice}>
                     <h2>Total</h2>
                     {/* итоговая цена с учётом количества товаров: */}
@@ -26,7 +30,7 @@ function OrderDetails({ setActivate }) {
                 </div>
             </div>
             <div className={style.form}>
-                <InputForm title={'Order'} btnStyle={'green'} inputStyle={'orderForm'} setActivate={setActivate} />
+                <InputForm title={'Order'} btnStyle={'green'} inputStyle={'orderForm'} setActivate={setActivate} orderProducts={orderProductsFromBasket()} />
             </div>
         </div>
     )

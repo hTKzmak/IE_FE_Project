@@ -6,7 +6,6 @@ import BasketItem from "./components/BasketItem";
 
 import style from './Basket.module.css'
 import OrderDetails from "../OrderDetails";
-import { useEffect } from "react";
 import NavigationBtn from "../UI/NavigationBtn";
 
 function Basket({ setActivate }) {
