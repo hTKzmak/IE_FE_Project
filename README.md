@@ -2,6 +2,7 @@
 
 # Информация:
 Задание: https://docs.google.com/document/d/1WR40Y1VMSLk6b1ayjvdkvroOiiyH_A9Qzy5URhrSp0E/edit?usp=sharing
+
 Макет: https://www.figma.com/file/0pMguGfGcTgufmXlNJe5gO/IE-FE?type=design&node-id=37%3A3913&mode=design&t=0eaWTodGUlURtGrM-1
 
 # Что реализовано:
