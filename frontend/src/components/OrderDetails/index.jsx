@@ -12,10 +12,6 @@ function OrderDetails({ setActivate }) {
     const cart = useSelector(store => store.cartList)
     let totalPrice = basketObj.Basket.reduce((acc, item) => acc + ((item.discont_price !== null) ? item.discont_price : item.price), 0);
 
-    function orderProductsFromBasket() {
-        localStorage.clear()
-    }
-
 
     return (
         <div className={style.orderForm}>
@@ -30,7 +26,7 @@ function OrderDetails({ setActivate }) {
                 </div>
             </div>
             <div className={style.form}>
-                <InputForm title={'Order'} btnStyle={'green'} inputStyle={'orderForm'} setActivate={setActivate} orderProducts={orderProductsFromBasket()} />
+                <InputForm title={'Order'} btnStyle={'green'} inputStyle={'orderForm'} setActivate={setActivate} />
             </div>
         </div>
     )
