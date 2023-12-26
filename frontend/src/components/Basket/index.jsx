@@ -45,7 +45,7 @@ function Basket({ setActivate }) {
     }
     else {
         return (
-            <div className="section">
+            <div className="section emptyBasket">
                 <h1>Shopping cart</h1>
                 <p>Looks like you have no items in your basket currently.</p>
                 <Button title={"Continue Shopping"} onclick={() => navigate('/products')} />

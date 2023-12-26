@@ -1,6 +1,6 @@
 .cartItem {
     display: flex;
-    /* width: 780px; */
+    width: 780px;
     gap: 32px;
 
     border-radius: 12px;
@@ -88,6 +88,13 @@
     gap: 16px;
 }
 
+@media screen and (max-width: 1400px) {
+    .cartItem {
+        width: auto;
+    }
+    
+}
+
 @media screen and (max-width: 1000px) {
     .cartItem{
         display: grid;
@@ -108,11 +115,7 @@
     
     .titleAndBtn{
         width: 200px;
-        text-align: center;
-    }
-
-    .titleAndBtn > button{
-        display: none;
+        text-align: left;
     }
 
     .countAndPrice{

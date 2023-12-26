@@ -12,10 +12,11 @@ function ProductItemPage() {
 
     const BASE_URL = 'http://localhost:3333/'
     const { products } = useSelector(store => store.productList)
-    const cartList = useSelector(store => store.cartList)
     const dispatch = useDispatch()
     const location = useLocation()
     const { id } = useParams()
+    
+    const cart = useSelector(store => store.cartList)
 
     const [counter, setCounter] = useState(1)
 
@@ -71,7 +72,7 @@ function ProductItemPage() {
                                 count: counter,
                                 image: elem.image
 
-                            }))} title={'Add to cart'} />
+                            }))} title={cart.find(item => item.id === elem.id) ? 'Added' : 'Add to cart'} disabled={cart.find(item => item.id === elem.id) ? true : false}/>
                         </div>
                         <h2>Description</h2>
                         <p>{elem.description}</p>

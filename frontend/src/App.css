@@ -33,15 +33,15 @@ h3 {
     position: absolute;
     justify-content: center;
     align-items: center;
-    
+
     margin: -5px;
     padding: 10px;
     font-size: 15px;
-    
+
     width: 10px;
     height: 10px;
     border-radius: 100%;
-    
+
     background: #393;
     color: white;
 }
@@ -67,6 +67,12 @@ h3 {
     font-weight: 700;
 }
 
+@media screen and (max-width: 1000px) {
+    .emptyBasket {
+        text-align: center;
+    }
+}
+
 @media screen and (max-width: 600px) {
 
     h1 {
@@ -88,6 +94,7 @@ h3 {
     .textAndBtn>a {
         display: none;
     }
+
 }
 
 /* данная стилизация убирает стрелочки с input типа number */

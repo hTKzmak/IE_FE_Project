@@ -33,7 +33,7 @@
     width: auto;
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1400px) {
     .orderForm {
         width: auto;
     }

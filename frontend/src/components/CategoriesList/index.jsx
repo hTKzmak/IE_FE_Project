@@ -26,7 +26,7 @@ function CategoriesList() {
         <div className={style.main}>
             <div className="textAndBtn">
                 <h1>Categories</h1>
-                <NavigationBtn displaytype={window.location.href == 'http://localhost:3000/categoires' ? 'none' : 'flex'} title={'All categories'} href={'/categoires'} />
+                <NavigationBtn displaytype={window.location.href == 'http://localhost:3000/categoires' ? 'none' : ''} title={'All categories'} href={'/categoires'} />
             </div>
             <div className={style.categories}>
                 {categoires.map(elem =>

@@ -9,11 +9,8 @@ import { useSelector } from 'react-redux'
 
 function Header({ active, setActive }) {
 
-    const [totalCount, setTotalCount] = useState(0);
     const cart = useSelector(store => store.cartList)
     const basketLength = cart.length
-
-    // let displayStyle = totalCount < 1 ? "none" : "flex";
 
     return (
         <header>
