@@ -6,6 +6,7 @@ import ProductItem from "../components/ProductItem"
 import { filterByOptionAction, filterByPriceAction, filterBySaleAction } from "../store/productListReducer"
 
 import style from './stylesForPages/ProductsPage.module.css'
+import Button from "../components/UI/Button"
 
 function ProductPage({ type }) {
     const BASE_URL = 'http://localhost:3333/'
@@ -73,7 +74,6 @@ function ProductPage({ type }) {
             <div className={style.productsList}>
                 {productsList.map(elem =>
                     <div key={elem.id}>
-                        <Link to={`/products/${elem.id}`}>
                             <ProductItem
                                 id={elem.id}
                                 img={BASE_URL + elem.image}
@@ -82,7 +82,6 @@ function ProductPage({ type }) {
                                 price={elem.price}
                                 discount={elem.discont_price}
                             />
-                        </Link>
                     </div>
                 )}
             </div>

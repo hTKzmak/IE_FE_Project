@@ -3,6 +3,7 @@ import { Link } from "react-router-dom"
 import style from './Sales.module.css'
 import ProductItem from "../ProductItem"
 import NavigationBtn from "../UI/NavigationBtn"
+import Button from "../UI/Button"
 
 const Sales = forwardRef((props, ref) => {
 
@@ -19,7 +20,7 @@ const Sales = forwardRef((props, ref) => {
                 filtered_data.splice(4, filtered_data.length)
                 setSales(filtered_data)
             })
-            document.body.scrollIntoView({ behavior: 'smooth' })
+        document.body.scrollIntoView({ behavior: 'smooth' })
     }, [])
 
     return (
@@ -32,16 +33,14 @@ const Sales = forwardRef((props, ref) => {
             <div className={style.sales}>
                 {sales.map(elem =>
                     <div key={elem.id}>
-                        <Link to={`/products/${elem.id}`}>
-                            <ProductItem
-                                id={elem.id}
-                                img={BASE_URL + elem.image}
-                                imgBtn={elem.image}
-                                title={elem.title}
-                                price={elem.price}
-                                discount={elem.discont_price}
-                            />
-                        </Link>
+                        <ProductItem
+                            id={elem.id}
+                            img={BASE_URL + elem.image}
+                            imgBtn={elem.image}
+                            title={elem.title}
+                            price={elem.price}
+                            discount={elem.discont_price}
+                        />
                     </div>
                 )}
             </div>

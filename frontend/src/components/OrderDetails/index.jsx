@@ -17,12 +17,10 @@ function OrderDetails({ setActivate, orderProducts }) {
         <div className={style.orderForm}>
             <div className={style.text}>
                 <h1>Order details</h1>
-                {/* итоговое кол-во товаров: */}
                 <h2>{cart.reduce((total, item) => total + item.count, 0)} Items</h2>
                 <div className={style.totalPrice}>
                     <h2>Total</h2>
-                    {/* итоговая цена с учётом количества товаров: */}
-                    <h1>${Math.round(totalPrice * totalCount).toFixed(2)}</h1>
+                    <h1>${(totalPrice * totalCount).toFixed(2)}</h1>
                 </div>
             </div>
             <div className={style.form}>
