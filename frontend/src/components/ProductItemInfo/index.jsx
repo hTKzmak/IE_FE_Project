@@ -20,12 +20,13 @@ function ProductItemInfo() {
 
     const [counter, setCounter] = useState(1)
 
+
     useEffect(() => {
         dispatch(fetchProductItem(id))
         document.body.scrollIntoView({ behavior: 'smooth' })
     }, [location.pathname, dispatch, id])
 
-    function countOperation(elem) {
+    function countUpdate(elem) {
         if (elem === '-') {
             counter > 1 && setCounter(counter - 1)
         }
@@ -50,7 +51,7 @@ function ProductItemInfo() {
                                 <>
                                     <h1>${elem.discont_price}</h1>
                                     <div className={style.salesMedia}>
-                                        <h3>${elem.price}</h3>
+                                        <h3 className="discountPrice">${elem.price}</h3>
                                         <div className={style.rebate}>{Math.round((elem.price - elem.discont_price) / elem.price * 100)}%</div>
                                     </div>
                                 </>
@@ -61,7 +62,7 @@ function ProductItemInfo() {
                         </div>
                         <div className={style.ProductAddToCartButton}>
                             <div className={style.itemCount}>
-                                <CountChanger id={id} count={counter} operations={countOperation} />
+                                <CountChanger id={id} count={counter} operations={countUpdate} />
                             </div>
                             <Button onclick={() => dispatch(addNewItemAction({
 

@@ -36,7 +36,7 @@ function ProductItem({ id, img, imgBtn, title, price, discount }) {
                         {discount !== null ? (
                             <>
                                 <h1>${discount}</h1>
-                                <h3>${price}</h3>
+                                <h3 className='discountPrice'>${price}</h3>
                             </>
                         ) : (
                             <h1>${price}</h1>

@@ -23,6 +23,11 @@ h2 {
 h3 {
     font-size: 20px;
     font-weight: 500;
+}
+
+.discountPrice {
+    font-size: 20px;
+    font-weight: 500;
 
     text-decoration: line-through;
     color: rgba(139, 139, 139, 1);
