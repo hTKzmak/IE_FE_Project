@@ -1,8 +1,8 @@
 import style from "./BtnBaner.module.css"
 
-function BtnBaner({title, type, ...otherProps}){
+function BtnBaner({title, type, btnStyle, disabled, ...otherProps}){
     return(
-        <button className={style.btnBanner}
+        <button disabled={disabled} className={btnStyle}
             {...otherProps}
             type={type}
         >

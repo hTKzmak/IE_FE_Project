@@ -1,8 +1,12 @@
 import { useForm } from 'react-hook-form'
 import style from './InputForm.module.css'
 import BtnBaner from '../btn_banner'
+import { useState } from 'react';
 
-function InputForm({ title, btnStyle, inputStyle, setActivate, orderProducts}) {
+function InputForm({ title, btnStyle, inputStyle, setActivate, orderProducts }) {
+
+    const [buttonText, setButtonText] = useState(title);
+    const [clickable, setClickable] = useState(false);
 
     let {
         register,
@@ -12,13 +16,18 @@ function InputForm({ title, btnStyle, inputStyle, setActivate, orderProducts}) {
 
     const onSubmit = () => {
         setActivate(true)
+        
         let inputTag = document.querySelectorAll('input');
         inputTag.forEach(elem => {
             elem.value = ""
-        }); 
+        });
 
-        let btn = document.getElementsByTagName('button');
-        btn.style = `color: green`
+        if (orderProducts != 'none') {
+            orderProducts()
+        }
+
+        setButtonText('Request Submitted')
+        setClickable(true)
     }
 
     return (
@@ -48,7 +57,7 @@ function InputForm({ title, btnStyle, inputStyle, setActivate, orderProducts}) {
                 })} />
                 {errors.email && <p style={{ margin: 0 }}>{errors.email.message}</p>}
 
-                <BtnBaner title={title} type={'submit'} />
+                <BtnBaner title={buttonText} disabled={clickable} type={'submit'} btnStyle={btnStyle} />
             </form>
         </div>
     )

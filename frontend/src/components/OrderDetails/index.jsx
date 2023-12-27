@@ -1,17 +1,17 @@
 import { useSelector } from 'react-redux';
 import InputForm from '../UI/InputForm'
 import style from './OrderDetails.module.css'
+import { useState } from 'react';
 
-function OrderDetails({ setActivate }) {
+function OrderDetails({ setActivate, orderProducts }) {
 
     // количество товаров и итоговая сумма:
     const basketValue = localStorage.getItem('basket');
-    const basketObj = JSON.parse(basketValue);
+    let basketObj = JSON.parse(basketValue);
 
     const totalCount = basketObj.Basket.reduce((acc, item) => acc + item.count, 0);
     const cart = useSelector(store => store.cartList)
     let totalPrice = basketObj.Basket.reduce((acc, item) => acc + ((item.discont_price !== null) ? item.discont_price : item.price), 0);
-
 
     return (
         <div className={style.orderForm}>
@@ -26,7 +26,7 @@ function OrderDetails({ setActivate }) {
                 </div>
             </div>
             <div className={style.form}>
-                <InputForm title={'Order'} btnStyle={'green'} inputStyle={'orderForm'} setActivate={setActivate} />
+                <InputForm title={'Order'} btnStyle={'orderBtn'} inputStyle={'orderForm'} setActivate={setActivate} orderProducts={orderProducts}/>
             </div>
         </div>
     )

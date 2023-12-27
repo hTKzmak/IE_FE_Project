@@ -12,7 +12,7 @@ function DiscountForm({setActivate}) {
             <div className={style.form}>
                 <img src={discountImage} alt="discount_image" />
                 <div className={style.fillingForm}>
-                    <InputForm title={'Get a discount'} btnStyle={'btnBanner'} inputStyle={"dicountForm"} setActivate={setActivate}/>
+                    <InputForm title={'Get a discount'} btnStyle={'discountBtn'} inputStyle={"dicountForm"} setActivate={setActivate} submitedText={'Request Submitted'} orderProducts={'none'}/>
                 </div>
             </div>
         </div>

@@ -1,5 +1,5 @@
 const defaultState = JSON.parse(localStorage.getItem('basket'))?.Basket || [];
-// const defaultState = [];
+const beginState = [];
 
 // {id, title, image, price, count}
 
@@ -10,6 +10,7 @@ const saveBasket = (basket) => {
 const ADD_NEW_ITEM = 'ADD_NEW_ITEM'
 const DELETE_ITEM = 'DELETE_ITEM'
 const CHANGE_COUNT = 'CHANGE_COUNT'
+const ORDER_ITEMS = 'ORDER_ITEMS'
 
 const INCR = 'INCR'
 const DECR = 'DECR'
@@ -55,6 +56,11 @@ export const cartReducer = (state = defaultState, action) => {
             let deleteItem = state.filter(elem => elem.id !== action.payload) 
             saveBasket(deleteItem);
             return deleteItem
+
+        case ORDER_ITEMS:
+            saveBasket(beginState)
+            return beginState
+
         default:
             return state
     }
@@ -63,6 +69,7 @@ export const cartReducer = (state = defaultState, action) => {
 export const addNewItemAction = (payload) => ({ type: ADD_NEW_ITEM, payload })
 export const deleteItemAction = (payload) => ({ type: DELETE_ITEM, payload })
 export const changeCountAction = (payload) => ({ type: CHANGE_COUNT, payload })
+export const orderItemsAction = () => ({ type: ORDER_ITEMS })
 
 export const incrAction = (payload) => ({ type: INCR, payload })
 export const decrAction = (payload) => ({ type: DECR, payload })

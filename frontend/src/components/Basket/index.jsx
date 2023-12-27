@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { useSelector } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 
 import Button from "../UI/Button";
 import BasketItem from "./components/BasketItem";
@@ -7,19 +7,26 @@ import BasketItem from "./components/BasketItem";
 import style from './Basket.module.css'
 import OrderDetails from "../OrderDetails";
 import NavigationBtn from "../UI/NavigationBtn";
+import { orderItemsAction } from "../../store/cartReducer";
 
 function Basket({ setActivate }) {
 
     const cartList = useSelector(store => store.cartList)
+    const dispatch = useDispatch()
 
     const navigate = useNavigate()
+
+    function orderProductsFromBasket() {
+        dispatch(orderItemsAction())
+        document.body.scrollIntoView({ behavior: 'smooth' })
+    }
 
     if (cartList.length > 0) {
         return (
             <div className="section">
                 <div className="textAndBtn">
                     <h1>Shopping cart</h1>
-                    <div class="line"></div>
+                    <div className="line"></div>
                     <NavigationBtn title={'Back to the store'} href={'/products'} />
                 </div>
                 <div className={style.basketInfo}>
@@ -38,7 +45,7 @@ function Basket({ setActivate }) {
                         )
                         }
                     </div>
-                    <OrderDetails setActivate={setActivate} />
+                    <OrderDetails setActivate={setActivate} orderProducts={orderProductsFromBasket} />
                 </div>
             </div >
         )

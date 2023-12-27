@@ -18,6 +18,7 @@ function ProductItemPage() {
     
     const cart = useSelector(store => store.cartList)
 
+    
     const [counter, setCounter] = useState(1)
 
     useEffect(() => {

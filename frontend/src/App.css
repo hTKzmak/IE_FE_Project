@@ -186,7 +186,7 @@ input[type=number] {
     color: #8B8B8B;
 }
 
-.btnBanner {
+.discountBtn {
     font-family: 'Montserrat', sans-serif;
     font-weight: 600;
     font-size: 20px;
@@ -205,7 +205,46 @@ input[type=number] {
     transition: 0.3s;
 }
 
-.btnBanner:hover {
+.orderBtn {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+
+    width: 516px;
+    padding: 16px 32px;
+
+    color: #FFF;
+    background: #393;
+
+    border-radius: 6px;
+    border: none;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.discountBtn:hover,
+.orderBtn:hover {
     color: #FFF;
     background: #282828;
+}
+
+.discountBtn:active{
+    color: #393;
+    background: white;
+    border: none;
+}
+
+.orderBtn:active {
+    color: #282828;
+    background: #FFF;
+    border: 2px solid #282828;
+}
+
+.discountBtn:disabled {
+    color: #393;
+    border: none;
+    background: #FFF;
+    cursor: no-drop;
 }

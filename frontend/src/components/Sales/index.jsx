@@ -26,7 +26,7 @@ const Sales = forwardRef((props, ref) => {
         <div ref={ref} className={style.main}>
             <div className="textAndBtn">
                 <h1>Sales</h1>
-                <div class="line"></div>
+                <div className="line"></div>
                 <NavigationBtn title={'All sales'} href={'/products/sales'} />
             </div>
             <div className={style.sales}>

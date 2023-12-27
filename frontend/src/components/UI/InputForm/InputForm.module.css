@@ -4,6 +4,15 @@
     text-align: start;
 }
 
+@media screen and (max-width: 1300px) {
+    .inputForm>input{
+        width: auto;
+    }
+    .inputForm>button{
+        width: auto;
+    }
+}
+
 @media screen and (max-width: 600px) {
     .inputForm>input{
         width: 250px;
