@@ -31,7 +31,7 @@ function BasketItem({ id, price, discont, title, image }) {
 
     return (
         <div className={style.cartItem} key={id}>
-            <img src={BASE_URL + image} alt="item" width='100px' />
+            <img src={BASE_URL + image} alt="item" />
             <div className={style.content}>
                 <div className={style.titleAndBtn}>
                     <h4>{title}</h4>

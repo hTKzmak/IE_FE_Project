@@ -32,7 +32,7 @@ function Basket({ setActivate }) {
                 <div className={style.basketInfo}>
                     <div className={style.basketList}>
                         {cartList.map(elem =>
-                            <div className={style.basketItem_list} key={elem.id} >
+                            <div key={elem.id} >
                                 <BasketItem
                                     id={elem.id}
                                     price={elem.price}

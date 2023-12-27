@@ -1,5 +1,6 @@
 .basketList{
     display: grid;
+    align-content: baseline;
     gap: 16px;
 }
 

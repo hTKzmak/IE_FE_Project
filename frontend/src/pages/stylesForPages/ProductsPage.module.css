@@ -1,9 +1,13 @@
 .productsList {
-    display: flex;
+    /* display: flex;
     justify-content: space-between;
     align-content: flex-start;
     gap: 70px;
-    flex-wrap: wrap;
+    flex-wrap: wrap; */
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    grid-gap: 10px;
+    justify-content: space-between;
 }
 
 .form {
@@ -59,19 +63,34 @@
     appearance: none;
 }
 
-.checkbox{
+.checkbox {
     accent-color: #393;
 }
 
-@media screen and (max-width: 1500px) {
+@media screen and (max-width: 1400px) {
     .productsList {
-        justify-content: center;
+        grid-template-columns: repeat(3, auto);
     }
 }
 
 @media screen and (max-width: 930px) {
     .form {
         display: grid;
+        justify-content: center;
         gap: 10px;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .productsList {
+        justify-content: center;
+        gap: 32px;
+        grid-template-columns: repeat(2, auto);
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .productsList {
+        grid-template-columns: repeat(1, auto);
     }
 }

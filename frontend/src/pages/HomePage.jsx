@@ -18,7 +18,7 @@ function HomePage() {
 
     return (
         <div className="content">
-            <ModalWindow activate={modalActive} setActivate={setModalActive} text={<p>You received a 5% discount on your first order.</p>} />
+            <ModalWindow activate={modalActive} setActivate={setModalActive} text={<p>Your data has been successfully confirmed. <br/> A manager will contact you shortly to receive <br/> a 5% discount on your first order.</p>} />
             <Banner salesScroll={salesScroll} />
             <div className="section">
                 <CategoriesList categoriesInHomePage={categoriesInHomePage} />

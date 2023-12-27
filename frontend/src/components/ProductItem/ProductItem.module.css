@@ -8,6 +8,7 @@
 
 .productInfo {
     padding: 0px 32px 32px 32px;
+    text-align: left;
 }
 
 .priceInfo {
@@ -17,6 +18,14 @@
     align-self: stretch;
 }
 
+.priceInfo>h1 {
+    font-size: 40px;
+}
+
+.priceInfo>h2 {
+    font-size: 20px;
+}
+
 .productImage {
     border-top-left-radius: 12px;
     border-top-right-radius: 12px;
@@ -24,33 +33,33 @@
     border-bottom: 1px solid #DDD;
 }
 
-.salesMedia{
+.salesMedia {
     position: relative;
     width: auto;
     height: auto;
 }
 
-.salesMedia>button{
+.salesMedia>button {
     display: none;
     justify-content: center;
     position: absolute;
     margin: 80% 5%;
 }
 
-.productItem:hover{
-    .salesMedia>button{
+.productItem:hover {
+    .salesMedia>button {
         display: flex;
-    } 
+    }
 }
 
 .rebate {
     display: flex;
     justify-content: center;
     align-items: center;
-    
+
     position: absolute;
     margin: 10px 0 10px 77%;
-    
+
     width: 63px;
     height: 34px;
 
