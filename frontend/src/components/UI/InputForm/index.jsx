@@ -37,7 +37,7 @@ function InputForm({ title, btnStyle, inputStyle, setActivate, orderProducts }) 
                 <input className={inputStyle} placeholder='Name' {...register('name', {
                     required: 'Name is required',
                 })} />
-                {errors.name && <p style={{ margin: 0 }}>{errors.name.message}</p>}
+                {errors.name && <p style={{ margin: 0, color: 'red' }}>{errors.name.message}</p>}
 
                 <input className={inputStyle} placeholder='Phone number' {...register('phoneNumber', {
                     required: 'Phone number is required',
@@ -46,7 +46,7 @@ function InputForm({ title, btnStyle, inputStyle, setActivate, orderProducts }) 
                         message: 'Invalid phone number specified'
                     }
                 })} />
-                {errors.phoneNumber && <p style={{ margin: 0 }}>{errors.phoneNumber.message}</p>}
+                {errors.phoneNumber && <p style={{ margin: 0, color: 'red' }}>{errors.phoneNumber.message}</p>}
 
                 <input className={inputStyle} placeholder='Email' {...register('email', {
                     required: 'email is required',
@@ -55,7 +55,7 @@ function InputForm({ title, btnStyle, inputStyle, setActivate, orderProducts }) 
                         message: 'Invalid email specified'
                     }
                 })} />
-                {errors.email && <p style={{ margin: 0 }}>{errors.email.message}</p>}
+                {errors.email && <p style={{ margin: 0, color: 'red' }}>{errors.email.message}</p>}
 
                 <BtnBaner title={buttonText} disabled={clickable} type={'submit'} btnStyle={btnStyle} />
             </form>

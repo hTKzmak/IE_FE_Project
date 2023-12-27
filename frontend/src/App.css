@@ -67,7 +67,7 @@ h3 {
     font-weight: 700;
 }
 
-/* та самая линия */
+/* line for text in HomePage and BasketPage */
 .line {
     border-top: 2px solid black;
     align-self: center;
@@ -147,7 +147,7 @@ input[type=number] {
     justify-content: space-between;
 }
 
-/* smth */
+/* for btn_banner */
 
 .dicountForm {
     padding: 16px 32px;
@@ -175,7 +175,7 @@ input[type=number] {
 
     background: none;
 
-    border: 1px solid #FFF;
+    border: 1px solid #DDD;
     border-radius: 6px;
 
     font-size: 20px;

@@ -27,7 +27,7 @@ function CategoriesList({ categoriesInHomePage }) {
         <div className={style.main}>
             <div className="textAndBtn">
                 <h1>Categories</h1>
-                <div className="line"></div>
+                <div style={{display: categoriesInHomePage == true ? '' : 'none'}} className="line"></div>
                 <NavigationBtn displaytype={categoriesInHomePage == true ? '' : 'none'} title={'All categories'} href={'/categoires'} />
             </div>
             <div className={style.categories}>
