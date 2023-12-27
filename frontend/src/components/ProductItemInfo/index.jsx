@@ -6,7 +6,7 @@ import style from './ProductItemInfo.module.css'
 import { fetchProductItem } from "../../asyncActions/products"
 import { addNewItemAction } from "../../store/cartReducer"
 import Button from "../UI/Button"
-import Amount from "../UI/Amount"
+import CountChanger from "../UI/CountChanger"
 
 function ProductItemInfo() {
 
@@ -23,14 +23,14 @@ function ProductItemInfo() {
     useEffect(() => {
         dispatch(fetchProductItem(id))
         document.body.scrollIntoView({ behavior: 'smooth' })
-    }, [location.pathname])
+    }, [location.pathname, dispatch, id])
 
-    function countOperation(oper) {
-        if (oper === '-') {
+    function countOperation(elem) {
+        if (elem === '-') {
             counter > 1 && setCounter(counter - 1)
         }
-        else if (oper === '+') {
-            setCounter(counter + 1)
+        else if (elem === '+') {
+            counter < 25 && setCounter(counter + 1)
         }
     }
 
@@ -61,7 +61,7 @@ function ProductItemInfo() {
                         </div>
                         <div className={style.ProductAddToCartButton}>
                             <div className={style.itemCount}>
-                                <Amount id={id} count={counter} operations={countOperation} />
+                                <CountChanger id={id} count={counter} operations={countOperation} />
                             </div>
                             <Button onclick={() => dispatch(addNewItemAction({
 

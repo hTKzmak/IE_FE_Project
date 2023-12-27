@@ -1,11 +1,12 @@
 import { useDispatch, useSelector } from "react-redux"
-import { decrAction, deleteItemAction, incrAction } from "../../../store/cartReducer"
+import { deleteItemAction } from "../../../store/cartReducer"
 
 import { ReactComponent as Delete } from './images/delete.svg'
 
 import style from './BasketItem.module.css'
-import Amount from "../../UI/Amount"
+
 import { useState } from "react"
+import CountChanger from "../../UI/CountChanger"
 
 function BasketItem({ id, price, discont, title, image }) {
 
@@ -19,11 +20,11 @@ function BasketItem({ id, price, discont, title, image }) {
     const [counter, setCounter] = useState(cartItem.count)
 
 
-    function countOperation(oper) {
-        if (oper === '-') {
+    function countOperation(elem) {
+        if (elem === '-') {
             counter > 1 && setCounter(counter - 1)
         }
-        else if (oper === '+') {
+        else if (elem === '+') {
             counter < 25 && setCounter(counter + 1)
         }
     }
@@ -39,11 +40,11 @@ function BasketItem({ id, price, discont, title, image }) {
                 </div>
                 <div className={style.countAndPrice}>
                     <div className={style.itemCount}>
-                    <Amount
-                        id={id}
-                        count={counter}
-                        operations={countOperation}
-                    />
+                        <CountChanger
+                            id={id}
+                            count={counter}
+                            operations={countOperation}
+                        />
                     </div>
                     <div className={style.itemPrice}>
                         {discont !== undefined && discont !== null ? (

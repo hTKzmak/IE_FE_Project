@@ -4,7 +4,7 @@ import style from './FilterForm.module.css'
 
 function FilterForm() {
 
-    const { categories_name, products } = useSelector(store => store.productList)
+    const { categories_name } = useSelector(store => store.productList)
     const dispatch = useDispatch()
 
     function checkboxHandle(e) {
@@ -32,7 +32,7 @@ function FilterForm() {
                 <input className={style.inputForm} name="min" type="number" placeholder="from" />
                 <input className={style.inputForm} name="max" type="number" placeholder="to" />
             </form>
-            <label style={{ display: (categories_name) == 'Discounted products' ? 'none' : 'flex' }}>
+            <label style={{ display: (categories_name) === 'Discounted products' ? 'none' : 'flex' }}>
                 Discounted items:
                 <input className={style.checkbox} type="checkbox" onClick={checkboxHandle} />
             </label>

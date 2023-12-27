@@ -9,7 +9,7 @@ import style from './ProductsList.module.css'
 function ProductsList({ type }) {
 
     const BASE_URL = 'http://localhost:3333/'
-    const { categories_name, products } = useSelector(store => store.productList)
+    const { products } = useSelector(store => store.productList)
     const dispatch = useDispatch()
     const location = useLocation()
     const { id } = useParams()
@@ -28,7 +28,7 @@ function ProductsList({ type }) {
             dispatch(fetchProductsByCategories(id))
         }
         document.body.scrollIntoView({ behavior: 'smooth' })
-    }, [location.pathname])
+    }, [location.pathname, dispatch, id, type])
 
     return (
         <div className={style.productsList}>

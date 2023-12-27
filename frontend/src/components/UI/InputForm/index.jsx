@@ -22,7 +22,7 @@ function InputForm({ title, btnStyle, inputStyle, setActivate, orderProducts }) 
             elem.value = ""
         });
 
-        if (orderProducts != 'none') {
+        if (orderProducts !== 'none') {
             orderProducts()
         }
 
@@ -42,7 +42,7 @@ function InputForm({ title, btnStyle, inputStyle, setActivate, orderProducts }) 
                 <input className={inputStyle} placeholder='Phone number' {...register('phoneNumber', {
                     required: 'Phone number is required',
                     pattern: {
-                        value: /^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$/,
+                        value: /^((8|\+7)?)?(\(?\d{3}\)?)?[\d\- ]{7,10}$/,
                         message: 'Invalid phone number specified'
                     }
                 })} />

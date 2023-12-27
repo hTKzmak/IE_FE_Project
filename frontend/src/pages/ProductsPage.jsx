@@ -3,7 +3,7 @@ import FilterForm from "../components/FilterForm"
 import ProductsList from "../components/ProductsList"
 
 function ProductPage({ type }) {
-    const { categories_name, products } = useSelector(store => store.productList)
+    const { categories_name } = useSelector(store => store.productList)
 
     return (
         <div className="content section">

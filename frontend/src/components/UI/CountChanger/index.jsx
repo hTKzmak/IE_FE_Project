@@ -1,10 +1,11 @@
 import { useDispatch } from "react-redux";
 import { changeCountAction } from "../../../store/cartReducer";
-import style from './Amount.module.css';
+import style from './CountChanger.module.css';
 
-function Amount({ id, count, operations }) {
-    const dispatch = useDispatch();
+function CountChanger({ id, count, operations }) {
+
     const countAction = (id, count) => dispatch(changeCountAction({ id, count }));
+    const dispatch = useDispatch();
 
     const handleIncr = () => {
         if (count < 25) {
@@ -29,4 +30,4 @@ function Amount({ id, count, operations }) {
     );
 }
 
-export default Amount;
+export default CountChanger;

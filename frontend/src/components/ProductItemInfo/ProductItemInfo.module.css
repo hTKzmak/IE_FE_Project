@@ -8,7 +8,6 @@
     width: 548px;
     flex-direction: column;
     align-items: flex-start;
-    /* gap: 32px; */
 }
 
 .productInfo>h2 {
@@ -80,7 +79,6 @@
 @media screen and (max-width: 1300px) {
 
     .productInfo {
-        /* width: 548px; */
         align-items: center;
     }
 
@@ -120,7 +118,7 @@
 
 .salesMedia{
     display: flex;
-    align-items: start;
+    align-items: left;
     gap: 10px;
 }
 
