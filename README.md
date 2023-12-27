@@ -5,6 +5,8 @@
 
 Макет: https://www.figma.com/file/0pMguGfGcTgufmXlNJe5gO/IE-FE?type=design&node-id=37%3A3913&mode=design&t=0eaWTodGUlURtGrM-1
 
+Дерево компонентов: https://www.figma.com/file/fOkSEJEsqY5IZeta8xw0rU/IE-FE---Second-tree-of-components?type=whiteboard&node-id=0%3A1&t=6p6InBvE5xOadFQs-1
+
 # Что реализовано:
 1) Переход по ссылкам в Header
 2) Станица HomePage, станица с категориями, станица с товарами (из категории, все товары, товары со скидкой), страница с определённым товаром, страница 404, страница корзины
