@@ -8,10 +8,13 @@ import style from './BasketItem.module.css'
 import { useState } from "react"
 import CountChanger from "../../UI/CountChanger"
 
+import { BASE_URL } from '../../../index'
+
 function BasketItem({ id, price, discont, title, image }) {
 
+    // const BASE_URL = 'http://localhost:3333/'
+
     const dispatch = useDispatch()
-    const BASE_URL = 'http://localhost:3333/'
 
     const cart = useSelector(store => store.cartList)
 

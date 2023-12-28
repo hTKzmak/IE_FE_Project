@@ -4,7 +4,6 @@ import { ReactComponent as Basket } from "./icons/basketEmpty.svg"
 import { ReactComponent as Menu } from "./icons/menu.svg"
 
 import { Link } from 'react-router-dom'
-import { useEffect, useState } from "react"
 import { useSelector } from 'react-redux'
 
 function Header({ active, setActive }) {

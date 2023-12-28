@@ -1,13 +1,13 @@
 import { forwardRef, useEffect, useState } from "react"
-import { Link } from "react-router-dom"
 import style from './Sales.module.css'
 import ProductItem from "../ProductItem"
 import NavigationBtn from "../UI/NavigationBtn"
-import Button from "../UI/Button"
+
+import { BASE_URL } from '../../index'
 
 const Sales = forwardRef((props, ref) => {
 
-    const BASE_URL = 'http://localhost:3333'
+    // const BASE_URL = 'http://localhost:3333'
 
     const [sales, setSales] = useState([])
 

@@ -4,10 +4,11 @@ import Category from "./components/Category"
 import { Link } from "react-router-dom"
 import NavigationBtn from "../UI/NavigationBtn"
 
+import { BASE_URL } from '../../index'
 
 function CategoriesList({ categoriesInHomePage }) {
 
-    const BASE_URL = 'http://localhost:3333'
+    // const BASE_URL = 'http://localhost:3333'
 
     const [categoires, setCategories] = useState([])
 
