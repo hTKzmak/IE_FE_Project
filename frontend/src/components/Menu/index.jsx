@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 function Menu({ active, setActive }) {
     return (
         <div className={active ? 'menu active' : 'menu'} onClick={() => setActive(false)}>
-            <div className={style.menuContent} onClick={e => e.stopPropagation()}>
+            <div className={style.menuContent}>
                 <div className={style.menuHeader}>Menu</div>
                 <ul className={style.list}>
                     <Link to={'/'}>

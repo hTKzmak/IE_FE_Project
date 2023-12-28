@@ -18,6 +18,10 @@ function ProductItemInfo() {
 
     const cart = useSelector(store => store.cartList)
 
+    // количество товаров и итоговая сумма:
+    const basketValue = localStorage.getItem('Basket');
+    let basketObj = JSON.parse(basketValue);
+
     const [counter, setCounter] = useState(1)
 
 

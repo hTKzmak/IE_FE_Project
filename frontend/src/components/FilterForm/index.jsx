@@ -38,11 +38,11 @@ function FilterForm() {
             </label>
             Sorted
             <select className={style.select} onClick={optionHandler}>
-                <option id="0">Default</option>
-                <option id="1">From $0 to $10</option>
-                <option id="2">From $10 to $20</option>
-                <option id="3">From $20 to $30</option>
-                <option id="4">From $30 to $50</option>
+                <option id="default">Default</option>
+                <option id="zetoToTen">From $0 to $10</option>
+                <option id="tenToTwenty">From $10 to $20</option>
+                <option id="twentyToThirty">From $20 to $30</option>
+                <option id="thirtyToFifty">From $30 to $50</option>
             </select>
         </div>
     )

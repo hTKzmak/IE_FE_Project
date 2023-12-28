@@ -129,7 +129,8 @@
 @media screen and (max-width: 400px) {
     .cartItem{
         display: grid;
-        width: 250px;
+        /* width: 250px; */
+        margin: 0 24px;
         justify-content: center;
     }
 }

@@ -77,58 +77,59 @@ export const productListReducer = (state = defaultState, action) => {
                 })
             }
         case FILTER_BY_OPTION:
-            if (action.payload.id == 0) {
-                return {
-                    ...state,
-                    products: state.products.map(elem => {
-                        elem.isShowPrice = true
-                        return elem
-                    })
-                }
-            }
-            else if (action.payload.id == 1) {
-                return {
-                    ...state,
-                    products: state.products.map(elem => {
-                        if (!(elem.price >= 0 && elem.price <= 10)) {
-                            elem.isShowPrice = false
-                        }
-                        return elem
-                    })
-                }
-            }
-            else if (action.payload.id == 2) {
-                return {
-                    ...state,
-                    products: state.products.map(elem => {
-                        if (!(elem.price >= 10 && elem.price <= 20)) {
-                            elem.isShowPrice = false
-                        }
-                        return elem
-                    })
-                }
-            }
-            else if (action.payload.id == 3) {
-                return {
-                    ...state,
-                    products: state.products.map(elem => {
-                        if (!(elem.price >= 20 && elem.price <= 30)) {
-                            elem.isShowPrice = false
-                        }
-                        return elem
-                    })
-                }
-            }
-            else if (action.payload.id == 4) {
-                return {
-                    ...state,
-                    products: state.products.map(elem => {
-                        if (!(elem.price >= 30 && elem.price <= 50)) {
-                            elem.isShowPrice = false
-                        }
-                        return elem
-                    })
-                }
+            switch (action.payload.id) {
+                case "default":
+                    return {
+                        ...state,
+                        products: state.products.map(elem => {
+                            elem.isShowPrice = true
+                            return elem
+                        })
+                    }
+                case "zetoToTen":
+                    return {
+                        ...state,
+                        products: state.products.map(elem => {
+                            elem.isShowPrice = true
+                            if (!(elem.price >= 0 && elem.price <= 10)) {
+                                elem.isShowPrice = false
+                            }
+                            return elem
+                        })
+                    }
+                case "tenToTwenty":
+                    return {
+                        ...state,
+                        products: state.products.map(elem => {
+                            elem.isShowPrice = true
+                            if (!(elem.price >= 10 && elem.price <= 20)) {
+                                elem.isShowPrice = false
+                            }
+                            return elem
+                        })
+                    }
+                case "twentyToThirty":
+                    return {
+                        ...state,
+                        products: state.products.map(elem => {
+                            elem.isShowPrice = true
+                            if (!(elem.price >= 20 && elem.price <= 30)) {
+                                elem.isShowPrice = false
+                            }
+                            return elem
+                        })
+                    }
+                case "thirtyToFifty":
+                    return {
+                        ...state,
+                        products: state.products.map(elem => {
+                            elem.isShowPrice = true
+                            if (!(elem.price >= 30 && elem.price <= 50)) {
+                                elem.isShowPrice = false
+                            }
+                            return elem
+                        })
+                    }
             }
         default:
             return state

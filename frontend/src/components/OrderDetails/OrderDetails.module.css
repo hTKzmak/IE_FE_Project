@@ -38,6 +38,10 @@
     margin: 0;
 }
 
+.text>h1{
+    font-size: 40px;
+}
+
 @media screen and (max-width: 1400px) {
     .orderForm {
         width: auto;
@@ -70,5 +74,8 @@
         width: auto;
     }
 
+    .text>h1{
+        font-size: 30px;
+    }
 }
 
