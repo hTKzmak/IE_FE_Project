@@ -7,6 +7,12 @@
 
 Дерево компонентов: https://www.figma.com/file/fOkSEJEsqY5IZeta8xw0rU/IE-FE---Second-tree-of-components?type=whiteboard&node-id=0%3A1&t=6p6InBvE5xOadFQs-1
 
+Frontend:
+https://github.com/hTKzmak/IE_FE_Frontend
+
+Backend:
+https://github.com/hTKzmak/IE_FE_Backend
+
 # Что реализовано:
 1) Переход по ссылкам в Header
 2) Станица HomePage, станица с категориями, станица с товарами (из категории, все товары, товары со скидкой), страница с определённым товаром, страница 404, страница корзины
