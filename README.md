@@ -7,11 +7,6 @@
 
 Дерево компонентов: https://www.figma.com/file/fOkSEJEsqY5IZeta8xw0rU/IE-FE---Second-tree-of-components?type=whiteboard&node-id=0%3A1&t=6p6InBvE5xOadFQs-1
 
-Frontend:
-https://github.com/hTKzmak/IE_FE_Frontend
-
-Backend:
-https://github.com/hTKzmak/IE_FE_Backend
 
 # Что реализовано:
 1) Переход по ссылкам в Header
@@ -32,6 +27,3 @@ https://github.com/hTKzmak/IE_FE_Backend
 16) Cистема корзины (изменение количества товаров и итоговой цены, сохранение товаров в LocalStorage)
 17) Иконка кол-ва товаров в корзине
 18) Кнопка покупки при наведении на карточку товара
-
-# Что ещё не реализовано / что нужно доделать:
-1) просто почистить/улучшить код 
