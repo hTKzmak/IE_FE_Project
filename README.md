@@ -7,6 +7,14 @@
 
 Дерево компонентов: https://www.figma.com/file/fOkSEJEsqY5IZeta8xw0rU/IE-FE---Second-tree-of-components?type=whiteboard&node-id=0%3A1&t=6p6InBvE5xOadFQs-1
 
+# Запуск приложения:
+1) Копирование проекта: git clone https://github.com/hTKzmak/IE_FE_Project
+2) переходим в папку backend и пишем:
+   - npm install
+   - npm run dev (для запуска бекенда)
+3) переходим в папку frontend и пишем:
+   - npm install
+   - npm start
 
 # Что реализовано:
 1) Переход по ссылкам в Header
